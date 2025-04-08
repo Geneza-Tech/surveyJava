@@ -90,4 +90,11 @@ public class ParticipantRestController {
         return new java.util.ArrayList<Participant>(participantService.findAllByPersonId(personId));
     }
 
+    @RequestMapping(value = "/Participant/userid/{uid}", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Participant> getParticipantByUserId(@PathVariable("uid") Integer userId) {
+        return participantService.findAllByUserId(userId);
+    }
+
+
 }

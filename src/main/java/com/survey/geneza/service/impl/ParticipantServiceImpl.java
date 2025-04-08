@@ -54,6 +54,11 @@ public class ParticipantServiceImpl implements ParticipantService {
         return new java.util.ArrayList<Participant>(participantRepository.findAllByPersonId(personId));
     }
 
+    @Transactional
+    public List<Participant> findAllByUserId(Integer userId) {
+        return participantRepository.findAllByUserId(userId);
+    }
+
     
 
 }

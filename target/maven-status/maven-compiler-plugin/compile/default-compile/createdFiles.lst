@@ -18,6 +18,7 @@ com/survey/geneza/service/impl/SurveyServiceImpl.class
 com/survey/geneza/security/ServerConfiguration$ResourceServerConfiguration.class
 com/survey/geneza/security/CustomUserDetailsService$UserRepositoryUserDetails.class
 com/survey/geneza/persistence/ResponseRepository.class
+com/survey/geneza/web/rest/InvalidLoginException.class
 com/survey/geneza/service/RoleService.class
 com/survey/geneza/security/CustomUserDetailsService$1.class
 com/survey/geneza/service/impl/QuestionTypeServiceImpl.class
@@ -29,13 +30,13 @@ com/survey/geneza/web/rest/AnswerOptionRestController.class
 com/survey/geneza/domain/GridDisplay.class
 com/survey/geneza/service/ResponseAnswersService.class
 com/survey/geneza/domain/ResponseAnswers.class
-com/dunamis/lms/web/rest/ImageRestController.class
 com/survey/geneza/service/PersonService.class
 com/survey/geneza/domain/Participant.class
 com/survey/geneza/service/impl/AnswerOptionServiceImpl.class
 com/survey/geneza/persistence/ResponseAnswersRepository.class
 com/survey/geneza/domain/QuestionType.class
 com/survey/geneza/persistence/ParticipantRepository.class
+com/survey/geneza/web/rest/ImageRestController.class
 com/survey/geneza/service/impl/ResponseServiceImpl.class
 com/survey/geneza/domain/Survey.class
 com/survey/geneza/persistence/RoleRepository.class

@@ -33,6 +33,7 @@ public class SurveyServiceImpl implements SurveyService {
         if (existingSurvey != survey) {      
         existingSurvey.setId(survey.getId());
                 existingSurvey.setSurvey(survey.getSurvey());
+                existingSurvey.setSurveyType(survey.getSurveyType()); // new line
         }
         survey = surveyRepository.save(existingSurvey);
     }else{

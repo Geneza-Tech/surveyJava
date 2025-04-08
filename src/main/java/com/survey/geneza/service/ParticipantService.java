@@ -8,4 +8,5 @@ public interface ParticipantService {
     public boolean deleteParticipant(Integer participantId);
     public List<Participant> findAll();
     public List<Participant> findAllByPersonId(Integer  person);
+    public List<Participant> findAllByUserId(Integer userId);
 }

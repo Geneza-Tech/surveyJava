@@ -4,7 +4,6 @@ import java.lang.StringBuilder;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import javax.persistence.Id;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
@@ -30,6 +29,16 @@ public class Response implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement
     private Integer id;  
+
+    @Column(name = "link_type")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private String linkType;
+
+    @Column(name = "link_id")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private Integer linkId;
     
     @ManyToOne
     @JoinColumn(name="survey")
@@ -62,6 +71,23 @@ public class Response implements Serializable {
     public void setParticipant(Participant participant) {
         this.participant = participant;
     }
+
+    public String getLinkType() {
+        return linkType;
+    }
+
+    public void setLinkType(String linkType) {
+        this.linkType = linkType;
+    }
+
+    public Integer getLinkId() {
+        return linkId;
+    }
+
+    public void setLinkId(Integer linkId) {
+        this.linkId = linkId;
+    }
+
 
 
     public Response() {

@@ -1,5 +1,4 @@
-package com.dunamis.lms.web.rest; 
-
+package com.survey.geneza.web.rest; 
 
 import com.survey.geneza.persistence.ImageRepository;
 import com.survey.geneza.domain.Image;
@@ -16,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import org.hibernate.SessionFactory;
+
 
 
 import com.fasterxml.jackson.core.JsonGenerationException;
@@ -38,20 +41,25 @@ import java.io.OutputStream;
 import java.io.InputStream;
 import java.sql.Blob;
 import java.sql.SQLException;
+import org.hibernate.Session;
+
+
 
 import javax.servlet.http.HttpServletResponse;
 
 
 @Controller("ImageRestController")
 public class ImageRestController {
+
+    @PersistenceContext
+    private EntityManager entityManager;
     
     @Autowired
     private ImageService imageService;
     
     @Autowired
     private ImageRepository imageRepository;
-    @Autowired  
-    SessionFactory sessionFactory;
+   
     
      
     
@@ -81,36 +89,30 @@ public class ImageRestController {
 
     
 
-    @RequestMapping(value="/Image/Upload", method=RequestMethod.POST,headers = "content-type=multipart/*" )
+    @RequestMapping(value="/Image/Upload", method=RequestMethod.POST, headers = "content-type=multipart/*")
     @ResponseBody
-    public Image  saveImage( @RequestParam("file") MultipartFile file, @RequestParam("image") String imageStr){
+    public Image saveImage(@RequestParam("file") MultipartFile file, @RequestParam("image") String imageStr) {
         System.out.println(imageStr);
         Image image = new Image();
         try {
             ObjectMapper mapper = new ObjectMapper();
             image = mapper.readValue(imageStr, Image.class);
-         } catch (JsonGenerationException e) {
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        }       
-
-        try
-        {
-           Blob blob = Hibernate.getLobCreator(sessionFactory.openSession()).createBlob(file.getInputStream(), file.getSize());
+        }
+    
+        try {
+            Session session = entityManager.unwrap(Session.class);
+            Blob blob = session.getLobHelper().createBlob(file.getInputStream(), file.getSize());
             image.setImage(blob);
-        } catch (HibernateException e) {
-             e.printStackTrace();
+        } catch (IOException | HibernateException e) {
+            e.printStackTrace();
         }
-           catch (IOException e) {
-              e.printStackTrace();
-        }
-       
-        image = imageService.saveImage(image,1);
+    
+        image = imageService.saveImage(image, 1);
         return image;
     }
+    
 
 
     

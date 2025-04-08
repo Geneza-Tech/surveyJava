@@ -4,7 +4,6 @@ import java.lang.StringBuilder;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import javax.persistence.Id;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
@@ -34,6 +33,11 @@ public class Survey implements Serializable {
     @Basic(fetch = FetchType.EAGER)
     @XmlElement
     private String survey;
+
+    @Column(name = "survey_type")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private String surveyType;
     
 
 
@@ -53,6 +57,15 @@ public class Survey implements Serializable {
     public void setSurvey(String survey) {
         this.survey = survey;
     }
+
+    public String getSurveyType() {
+        return surveyType;
+    }
+
+    public void setSurveyType(String surveyType) {
+        this.surveyType = surveyType;
+    }
+
 
 
     public Survey() {

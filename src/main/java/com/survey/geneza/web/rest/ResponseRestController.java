@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -103,6 +104,14 @@ public class ResponseRestController {
         @PathVariable("question_id") Integer questionId) {
     return responseService.findAllBySurveyIdAndQuestionId(surveyId, questionId);
 }
+
+@RequestMapping(value = "/Response/bylink", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Response> getByLinkTypeAndLinkId(
+            @RequestParam("linkType") String linkType,
+            @RequestParam("linkId") Integer linkId) {
+        return responseService.findByLinkTypeAndLinkId(linkType, linkId);
+    }
 
 
 }

@@ -34,6 +34,8 @@ public class ResponseServiceImpl implements ResponseService {
         existingResponse.setId(response.getId());
                 existingResponse.setSurvey(response.getSurvey());
                 existingResponse.setParticipant(response.getParticipant());
+                existingResponse.setLinkType(response.getLinkType()); // new line
+                existingResponse.setLinkId(response.getLinkId());
         }
         response = responseRepository.save(existingResponse);
     }else{
@@ -59,6 +61,10 @@ public class ResponseServiceImpl implements ResponseService {
     } @Transactional
     public List<Response> findAllBySurveyIdAndQuestionId(Integer surveyId, Integer questionId) {
         return responseRepository.findAllBySurveyIdAndQuestionId(surveyId, questionId);
+    }
+    @Transactional
+    public List<Response> findByLinkTypeAndLinkId(String linkType, Integer linkId) {
+        return responseRepository.findByLinkTypeAndLinkId(linkType, linkId);
     }
 
     

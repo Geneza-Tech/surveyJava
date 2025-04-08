@@ -58,6 +58,7 @@
 /home/ubuntu/survey/src/main/java/com/survey/geneza/domain/Participant.java
 /home/ubuntu/survey/src/main/java/com/survey/geneza/web/rest/ResponseRestController.java
 /home/ubuntu/survey/src/main/java/com/survey/geneza/Application.java
+/home/ubuntu/survey/src/main/java/com/survey/geneza/web/rest/InvalidLoginException.java
 /home/ubuntu/survey/src/main/java/com/survey/geneza/service/ResponseService.java
 /home/ubuntu/survey/src/main/java/com/survey/geneza/security/WebSecurityConfiguration.java
 /home/ubuntu/survey/src/main/java/com/survey/geneza/web/rest/ImageRestController.java

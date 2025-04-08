@@ -10,4 +10,6 @@ public interface ResponseService {
     public List<Response> findAllBySurveyId(Integer  survey);
     public List<Response> findAllByParticipantId(Integer  participant);
     public List<Response> findAllBySurveyIdAndQuestionId(Integer surveyId, Integer questionId);
+    public List<Response> findByLinkTypeAndLinkId(String linkType, Integer linkId);
+
 }

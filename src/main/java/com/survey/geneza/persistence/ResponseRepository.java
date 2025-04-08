@@ -19,5 +19,6 @@ public interface ResponseRepository extends JpaRepository<Response, Long> {
     @Query("SELECT r FROM Response r JOIN ResponseAnswers ra ON r.id = ra.response WHERE r.survey = :surveyId AND ra.question = :questionId")
     List<Response> findAllBySurveyIdAndQuestionId(Integer surveyId, Integer questionId); 
    Page<Response> findAll(Pageable pageable);
+   List<Response> findByLinkTypeAndLinkId(String linkType, Integer linkId);
 
 }
