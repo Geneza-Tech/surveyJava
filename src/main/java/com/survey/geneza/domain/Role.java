@@ -23,9 +23,9 @@ import org.springframework.security.core.GrantedAuthority;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "Role")
+@Table(name = "role")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "SurveyRest/com/survey/geneza/domain", name = "Role")
+@XmlType(namespace = "SurveyRest/com/survey/geneza/domain", name = "role")
 public class Role implements GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;

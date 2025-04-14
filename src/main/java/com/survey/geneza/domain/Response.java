@@ -28,7 +28,12 @@ public class Response implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @XmlElement
-    private Integer id;  
+    private Integer id; 
+    
+    @Column(name = "linkcomment")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private String linkcomment;
 
     @Column(name = "link_type")
     @Basic(fetch = FetchType.EAGER)
@@ -70,6 +75,14 @@ public class Response implements Serializable {
     
     public void setParticipant(Participant participant) {
         this.participant = participant;
+    }
+
+    public String getlinkcomment() {
+        return linkcomment;
+    }
+
+    public void setlinkcomment(String linkcomment) {
+        this.linkcomment = linkcomment;
     }
 
     public String getLinkType() {

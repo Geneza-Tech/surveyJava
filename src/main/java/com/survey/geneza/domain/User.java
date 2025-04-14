@@ -25,9 +25,9 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "User")
+@Table(name = "user")
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(namespace = "SurveyRest/com/survey/geneza/domain", name = "User")
+@XmlType(namespace = "SurveyRest/com/survey/geneza/domain", name = "user")
 public class User {
     
     @Column(name = "id")

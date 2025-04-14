@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.springframework</groupId>
-	<artifactId>com_survey_geneza</artifactId>
+	<artifactId>com_geneza_lms</artifactId>
 	<version>3.0.0</version>
 	<packaging>jar</packaging>
 
@@ -29,10 +29,23 @@
 				<artifactId>spring-boot-starter-web</artifactId>
 			</dependency>
 	
+			
+			 <!-- PostgreSQL Driver -->
+    		<dependency>
+        		<groupId>org.postgresql</groupId>
+        		<artifactId>postgresql</artifactId>
+        		<scope>runtime</scope>
+    		</dependency>
+
+			<!-- Jakarta Persistence API (for CriteriaBuilder) -->
+    <dependency>
+        <groupId>jakarta.persistence</groupId>
+        <artifactId>jakarta.persistence-api</artifactId>
+        <version>3.1.0</version>  <!-- Use latest version -->
+    </dependency>
 			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>8.0.33</version>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
 				<scope>runtime</scope>
 			</dependency>
 			<dependency>
@@ -40,11 +53,7 @@
 				<artifactId>spring-boot-starter-test</artifactId>
 				<scope>test</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-devtools</artifactId>
-				<scope>runtime</scope>
-			</dependency>
+			
 			<dependency>
 			    <groupId>org.springframework.boot</groupId>
 			    <artifactId>spring-boot-starter-security</artifactId>

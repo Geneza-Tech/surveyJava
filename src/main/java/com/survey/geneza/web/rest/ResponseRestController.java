@@ -19,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.ResponseEntity;
 
 
 @Controller("ResponseRestController")
@@ -111,6 +112,13 @@ public class ResponseRestController {
             @RequestParam("linkType") String linkType,
             @RequestParam("linkId") Integer linkId) {
         return responseService.findByLinkTypeAndLinkId(linkType, linkId);
+    }
+
+    @RequestMapping(value = "/Response/personId/{personId}", method = RequestMethod.GET)
+    @ResponseBody
+    public ResponseEntity<List<Response>> getResponsesByPersonId(@PathVariable Integer personId) {
+        List<Response> responses = responseService.getResponsesByPersonId(personId);
+        return ResponseEntity.ok(responses);
     }
 
 

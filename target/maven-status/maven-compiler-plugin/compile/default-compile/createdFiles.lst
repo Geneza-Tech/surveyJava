@@ -33,6 +33,7 @@ com/survey/geneza/domain/ResponseAnswers.class
 com/survey/geneza/service/PersonService.class
 com/survey/geneza/domain/Participant.class
 com/survey/geneza/service/impl/AnswerOptionServiceImpl.class
+com/survey/geneza/domain/Country.class
 com/survey/geneza/persistence/ResponseAnswersRepository.class
 com/survey/geneza/domain/QuestionType.class
 com/survey/geneza/persistence/ParticipantRepository.class
