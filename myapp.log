@@ -1,13 +1,209 @@
-2025-04-09 08:52:21.507  INFO 252060 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 252060 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
-2025-04-09 08:52:21.527  INFO 252060 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
-2025-04-09 08:52:25.025  INFO 252060 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-04-09 08:52:25.025  INFO 252060 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
-2025-04-09 08:52:25.035  INFO 252060 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
-2025-04-09 08:52:25.146  INFO 252060 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-04-09 08:52:25.640  INFO 252060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-04-09 08:52:26.034  INFO 252060 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-04-09 08:52:32.195  INFO 252060 --- [restartedMain] com.survey.geneza.Application            : Started Application in 11.205 seconds (JVM running for 11.745)
-2025-04-09 08:52:40.359  INFO 252060 --- [http-nio-8443-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
-2025-04-09 08:52:42.579  INFO 252060 --- [http-nio-8443-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1319 ms
-2025-04-09 08:54:50.021  INFO 252060 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-04-09 08:54:50.066  INFO 252060 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-22 11:05:08.606  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 293963 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:05:08.620  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:05:11.905  INFO 293963 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:05:11.906  INFO 293963 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:05:11.918  INFO 293963 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-04-22 11:05:12.019  INFO 293963 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:05:12.370  INFO 293963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-22 11:05:12.735  INFO 293963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-22 11:05:18.415  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : Started Application in 10.355 seconds (JVM running for 11.155)
+2025-04-22 11:06:32.455  INFO 293963 --- [http-nio-8443-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:428) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:684) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_442]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_442]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_442]
+
+2025-04-22 11:07:01.997  INFO 293963 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-22 11:07:02.049  INFO 293963 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-22 11:07:02.468  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 293963 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:07:02.469  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:07:03.259  INFO 293963 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:07:03.261  INFO 293963 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:07:03.277  INFO 293963 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:07:03.399  INFO 293963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-22 11:07:03.438  INFO 293963 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-22 11:07:05.086  INFO 293963 --- [restartedMain] com.survey.geneza.Application            : Started Application in 2.679 seconds (JVM running for 117.826)
+2025-04-22 11:07:05.161  INFO 293963 --- [http-nio-8443-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-04-22 11:07:07.274  INFO 293963 --- [http-nio-8443-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1183 ms
+2025-04-22 11:09:05.493  INFO 293963 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-22 11:09:05.574  INFO 293963 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-22 11:12:20.592  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 296401 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:12:20.597  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:12:24.408  INFO 296401 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:12:24.408  INFO 296401 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:12:24.427  INFO 296401 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-04-22 11:12:24.559  INFO 296401 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:12:24.984  INFO 296401 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-22 11:12:25.453  INFO 296401 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-22 11:12:31.457  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : Started Application in 11.536 seconds (JVM running for 12.051)
+2025-04-22 11:12:49.807  INFO 296401 --- [http-nio-8443-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:428) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:684) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_442]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_442]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_442]
+
+2025-04-22 11:12:49.807  INFO 296401 --- [http-nio-8443-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:428) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:684) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_442]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_442]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_442]
+
+2025-04-22 11:14:06.946  INFO 296401 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-22 11:14:06.985  INFO 296401 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-22 11:14:07.410  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 296401 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:14:07.411  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:14:08.028  INFO 296401 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:14:08.029  INFO 296401 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:14:08.041  INFO 296401 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:14:08.131  INFO 296401 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-22 11:14:08.172  INFO 296401 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-22 11:14:10.061  INFO 296401 --- [restartedMain] com.survey.geneza.Application            : Started Application in 2.712 seconds (JVM running for 110.656)
+2025-04-22 11:14:56.433 DEBUG 296401 --- [http-nio-8443-exec-1] o.a.coyote.http11.Http11InputBuffer      : Received [þ úîvD[Y»©Ó|fºÿZÑ{ö6¾ínì½
+·Àn ï+¥ò¡tík¹c^øæ~4ûfëV¿ySï6â  ::À+À/À,À0Ì©Ì¨ÀÀ   / 5    -     + zz      backend.autographa.io 3ïíêê  ìÀI¦WÇ/zk¤|ù,Þ6\ãT»dG+&ðµ¶W¬½õ["
+ Ö¬¶º@'Aøã"¯}*ÿkùÚXïüTU
+§¥ÆiTâÎ7®òkê%¤8;ô4¸¨yØd0²{¡Q[ØëZT
+J-ÈfNó1#VÖ?Ùb|%6«·1ÕÝ5··¸Àa±GD«ëÌ@ ÙuöQuWWBOóB©p¢ø9®¸rÎò±À4UÒÍÚ-oëOã+\òRÄêÔÌ¸I´È=}ÛÊõl[]¿x8´fGXPâ<gJ/µ¢x,FùiCWµÆvEø²VvaN§8üÉÅÂ#>mækÇ9©á×Q¶CÚÜi
+¦8Ná-¨@¸T¹((û+ºÛfÇjÍÕÁ|ðW'Î2:Z1l½- v¾­ð]¦szR)ª¯øöªeE÷¨UV<µ|7	Èt®¬:Ú)ZSh[óp7h¶´7}Òo·h.¿/Û_Ïu
++â)&WÂ@/ÖC)'~§·%Y|ÒH?u4ÆÐQ!+Q2ûI"Ã
+$Óm÷IÈÅë¬eçVUl}ev¡-ÙATºÅ	êHÐ0¤Ñü'SS`»Âgì¡>Á«b*5Ôv·E%ff8ºlù %,} ¨Ä ¹_ïá±	9rr(ïBOª1·¡3+äÚFõ7.|8KieÚ"°\Æ°£S$Ë>Ôr«Y¤hR¼PÚt1l®[Azwb%~ö"¸zTÑGÆôÃ2ç_Ç¥s§©û£3Õcv÷F°´(B9{7V÷ÀN¨2á<Ý
+Ëi{|¿»+CáYMxÙuæÆ{äêMõñ³gÏ×öÉ}^°cLÆé+;¶È) (pÆç¥®íT®Sã3:à1LEù,Â$\<ã<Ën'F|aù¨WH|f7!DÕ£¡ì¯IJ:S¬Ó¹aí¦	×Ì^>TüÇÂ¬¼ìg­ÄùXä¾<sÄf¨c2NûSÌK kÏæ¸']ËÚBI+~@bÅq`+/mû,lÊ§üS×Âq«üyPÖÇ©Qx²[»À³UªÃZ0ô¬4)0×
+µý@é8r«N9Fé6rëëLmDÔªpÀ×¦xã_"L%&5V[ÆG¤°MAsi#kQùÓ¸ÂçÆ°h09´§;tÕó^U7q0YD#M}±ë]ù]B`¹`!±iÒå¸óy)¤Râè¤k§tL×Z+¦ÀðÂ»ë²1ñ8m¬u«â×¦r±Cf±öð|%!ý6µw+Ê££Jù¢3Ó¾ë8úÛÄÑv, k®²zù±ÞÄyÌ7:Ík"Þ­Ëà1\í¸FB½aîª#VÖíÊ®_'éf»DLM=-ª|Ü6H§Vk2`èícÑÞã»sF³t   d¯ÝÂÚPáC!¾´Où¬n    #        ÿ     þ ú   Ö  ÀEoLH¬ÔÜ'õ³8Ît3HàgonëêhJÃ" Ð0j¼	|w>âêåZMáéîy4é5©©z-ÁâÍçÆà+,°v¨NË®$Óä'ÕÖ¬;lN¬ØHx°Ê·FJ&ØÉ¾Í0<È8¤o,íM69ôÃÖÏG/æé6¯Îæd%Wµ+ÔIL)4©$<ÊÊvº4ÐíæÛà­üUÉXåJÎ[&ù¥YDbÙÃ¬¶SQ@dÁ	ÙÀHºW©T yÒë(×å#íÂÀÒªÚøj   h2http/1.1DÍ  h2       
+  
+êêì   zz  ]
+2025-04-22 11:14:56.434  INFO 296401 --- [http-nio-8443-exec-1] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP header parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:428) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:684) ~[tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_442]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_442]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.37.jar:8.5.37]
+	at java.lang.Thread.run(Thread.java:750) [na:1.8.0_442]
+
+2025-04-22 11:14:56.447 DEBUG 296401 --- [http-nio-8443-exec-2] o.a.coyote.http11.Http11InputBuffer      : Received [ §ð,¯lò °¬ÙiqG1ËßLW·9(í?r)ìü I¾§óæ¿ÈÎ¦))ÈÅ#½hÐ¯ÏÍÇz&a  zzÀ+À/À,À0Ì©Ì¨ÀÀ   / 5 ±JJ   + jj -  3ïí
+
+  ìÀHf«2æ}ÎóWa¢à¦F(£t¥9ÊeVÂTÑtËÉS%¹j
+ì¸?'ÎÐ?>å¡ê¥o*ñ}®ËÌN·4
+z¿¤{b´;ÀÁ@iïiKòg86Fa*N¼ÍP+ìM9Æôc¶² ´A(¦=¬( Ü[M¬óÃZqµHÀW&AH6ÏeDÇY»º³¾èC/Ä£ó"´.á©¥2Æ©eå5_ª°QJôuê¤4Õ¡+±¢n*"ê¢ª-Ð2ì×J9Ç;~©Û:+ÎG4åjç±®_I±;È4G?U¡Ï&ì ®äÆè¨jxu`ÌÍ¼·õ×Ëì)º~UËrz°Ó¥ÿ=qB}uh3ø¸ûêCûW@VÃp¿x±x4Ï.?è¹©#r ·©=Ö v
+2bå¼	Aæy¡w®´>6<É=ú®E¸ZR»´ì$²[®ËÔ$áYZ<Ü
+ö[¶ëìr5:¥Ha¹QÀ"ulà |Èj@6©*`ú.õ2hâµsÃxb@«£?#rFg¤LÆä3Oã
+v
+ §¹7~ri#Áb!v¶{½©µ8X%¥¨÷mzT'¹	T½^å(ºÊ²t!ª¦´L*Aå¤?Ù'ðÈa±iyî+Ãcæëe¥B>Ë\Iå¡8Ø-1#¦ª¶c°··Ç:	Çx­ú7×&â^È-é"¶ÇÂâ Îù¦¸âx%>*PiÇRÀ\^
+Ø9ke¾I_×ëq§Øº3ÛÃL^08ôÀF!W§2=ý¦¹Ã.Á¾ëÓ<ý·5yr0JLÉ»g¾	3À:b6×vÖ24¨:Sy¥NÕ?¬+}ñHÄ'6§@@ÿ58 ñÇÔ·m®HyÔ0zT_&xj\úÀÈ{gRÑ`:q&«X9î(¾ÜÞe1Ï°|ûw,_ ÜW
+0OÐÊmü%¾Ì,ÝÐè[8k9¤öøÐhó[{H¸ã+²8vÂ§¨}#pÏº&µF·Qc?÷¤ñc©ÍtÆfÄ]É­e©a-%e<Ô°¥ÅjNËêFÊ[#ð75Îxûcö*<mIÐÖh0Å",xËtfWiaXOdÏû?Gk&ògIsNNµeÔ:¢A0/A¼´©ÊjùV[B Ê.À¹ÆÁ>ÀÍj6101Z	1S°"üÐ
+pügdU¼®.Ì£º2Rìy}o¼tE5Y?6ëP¯ËZ8?Ý¬ø¢:OR<4 ÜúVÉS`Á.ð¡!ÎìNãç»ó=ÅVU1MÄ#rR÷]Ý"óEÈå	³E:¾ü[§ÌAªÛA´ß¸÷¢¼(FNvÇ6åfXu$¢}M ª¶
+\¾5b2H÷rÀ   X±ù.<Â»:å^äÅFyÌÄcÇhíÆ¹Ô7DÍ  h2         þ     ZßÒgØÓbmü;ÝÔ¼Óä+9ÔP ®
+ ðÿj½®¯8n{yës	#Ì=*îOþ7ÒÃo9qPV¼W39­ïÊ¼r)Æ¼ùX-,)w`N	â$èúÄYúÇs ¢4ðK*Pþ}OûÁÈIe#ë3O2ÜÝð3ý§dÔ-ÆIèâ¤IúnªÇ'²4ä&Ilàk°'Z
+þÉv4Ð)xx£r4Ë&æêgá/Ý¡Ëó¾|å!(Ak@PU0aþQ ÃSL0ÝÔÎ²Ï¬¿¼/°bHõÄm(§É$×"ãÇ1/6½÷¹Jz+vÂENf! #           ÿ      
+  
+
+
+ì      h2http/1.1      backend.autographa.io  ]
+2025-04-22 11:14:56.496 DEBUG 296401 --- [http-nio-8443-exec-3] o.a.coyote.http11.Http11InputBuffer      : Received [þ úÊ¶fg×â`ÐyøN1h]z^øÂ=?ÍÂOq Lg­q¿Ð¾±b¥<9*FºäëÈK9  À+À/À,À0Ì©Ì¨ÀÀ   / 5      þ ú     Ó _"¿")³ÐÞb
+³r%³Y®ÒsÒæ»+[~z Ð%~ºÊCÏtG	º8kïh¹IÔe×7u¥¾Â7GgÄPÈé|xS1CSqÔlórÑxiQìLê°
+Â4u?½é3Z7õ:ÆKæã¡ú8³Vo¹¦
+go°FéJ0£pmaê¥ãÑ øÑåaÍ||£'ØéÅÓKd§e`ç'løtÎ(X×Ü¸_C'W~KYÎ.ÕdoÏ/'AÏ6¡ÆÃÍ8Ó©OR¶£çãùÊ 
+  
+ÊÊì          + ªª       3ïíÊÊ  ìÀF0XÚ¤ÁpÊj#¡b»¾'q¹ê6Zéc3ßU"d.'Ng´J&6J÷u:m(zö8(1J1<O K#£NÙ [gÃ«¿9OÏÁ Ã,Ã½`W··ÐVù§,ÁÛ_ñ·à[-e6%°Ér¼@[Ì¿ËgãLéLÍ«w\`v~¼ØRÌ"ËÊ³G$éY¥-HyîA.	Tàª«!Ê7+rås±uçúaJÚKkØÂJ¶Sulä!ë3¿,h¯nÓtz
+®[_ÏW¡ø¾7]hX¸,©_ªNêwPÂÀêZÃÞ	6yV¬0m$C¼o»p´ªÄ¬É±ä¼üK>ú+¥þ°CÇZukÒD-d;÷&Cv' ý]°"õNú%ªä÷-÷DdG~ÿ;í»è*Fþe)©D@rMócG`è¿êv$2 \ÝHËqÂ-JfºbËLv%p!à}éÊA`:HYtCÚòT%6|"«6½û4Âgwi)Ù¢¥Á5t w§ÁºçÔT:R¿?,®7©15sRúÒZsE{{y¤.0;ÙÜs,ÇÍÇ? aL#ËÀt\ÙmV·ÚI=ëá(åê4VwHùµîC ät½¼q®{ÊåÝaÉXc; ÕEài¿ïCOÞRòRj¿Øªa@HÚq[Ã@¢Ë¢e:ÎÈâ¹z?)XcgÌÁ)I"­ÂY½GùÜ	9roXGEôAü?è²zí{#q«þQËÆC2Éø|$;§kdu-Ü±nfi¾ÃÇ©ixY»ª8°d]h
+¸%­i|Â3vP%@µÅº»ìRì4,èéa%2¨rnÛóòBv&I¤*ë÷
+Ï¦4º%
+Iv®Yeð¢±¨¦ºMDW-ébð¨a;µ]`´×Èåväá·âÇ7E'«*H%¶0ä
+SßèÄu¦`3üOYYdO{¸Ö83f#É3LXÒlK¦2Ðº_a)_é9p?49gsUc·FIÀÄm7Û!{«ù¨Y°Hæç\+{j³FÞ4¢×Y"¿úbÜº¢LÕÖ©§èÕ¹ 0)ÉúcAD»Ô rË¡õhWGJqrlÈZ¹K\gû7:µ=`(¶#Êê=b¨èôwucRèªi0º8àVr­ÃòLJ¤¶a ô9³¯±ª²7¢íÛ]¤»G_¾e±ËçõP×¥§Ð´NÚ5ÓuÄ{¡ÆÊÇìjhjlÐ¸z ZN 9SBÁÀ!Á92Ñ±¤×¾²T	îqëSÑM­ý@7Àù¶ÄOõÂg&i»[.þ¦Âc´ëþÃÀ+ .ÿy~´ÖË¬.Ulèô äsbd   S¢ü.¶´^ÊCjPRòOê4S'®B|ÇëKÞDÍ  h2    #        backend.autographa.ioÿ   -       h2http/1.1ÊÊ  ]
+2025-04-22 11:14:56.527 DEBUG 296401 --- [http-nio-8443-exec-4] o.a.coyote.http11.Http11InputBuffer      : Received [þ úpIAûé@)	Ë×µð§¨8,Ü¼µ.Å@
+/Ù É=r=åÊn³Õe¥	ÐÅãI¡nÝ=tFAJgJ  
+
+À+À/À,À0Ì©Ì¨ÀÀ   / 5 ZZ   
+  
+jjì    3ïíjj  ìÀ¥Â ?ùBõx(jK VcÕCv_ÅÎ¦È¾é&p.¼l:,©`°js£[P¾³ö¦º_Ønë 1t|DKÅP(véjCtâöË*tPëSLOe`{E¢\¤!ÌøRíW¤rr`qÂuYó½èøÙF ¡ò·}@è@VàdúÃîèµK,Ç$õ7P Zq¤b&W´A4T(§E0ºÖgCY1qz,¬(nÃaãHcÆ·ýÔ°¬	Â-ìð	«äLyÛ1H¹c´æÏÛ§òaÌ}\Zsâ©¶èÙPÍ´4W:ÀzHÍP²©ï;Éw6F%h*ûn}º£ÙáYX7-ÄÏ\«TnqÇþ2y:ÇàzªÉ\ÿP¼¥J[×(Íl¦%:§=#`ãV|5½4ZæYÏæÊ6¨ËÀÀË0«µÁ£¸ÌÏõ34b²g$SA»[ý8Í¦$Â¼{b²M ZlU¹3ò¬g@T­ÆÖ)F°(k EG'wHÈ»Äê6ºPÊ;7[Ö©±Ôy Ñ±$Å`_àf¹VÇc£ç=ñ$DÍºøª§+	)'±T¦ñ*áÉ¸D¹!KÉâP	=G]}÷f©÷¶U5]û(n@9÷^Yåâ§FìÄ÷[uzÝªÏsÖ7¾Ê)6«´­óA©HØ"Í !»YÆQùÚ2,túØ¹.å7¾Îó%wðr§Ï¡:`©åöy 1z,'<múxnst£lNe@P9Ak2dR$zn&QdæÒàKÃ;Éy>ØS¹ÉÕ`þ1®E¡SÕpVÀ¶#|YÄôl/v×|ôJ!¹ù ÓRyÇòÅC­p{J@y¸ÙÂÎTEïk`¿#çyOÝ^Ü¹n¡:I0XB!;ô÷)«H²²Û7%«lpxz"$¸M}_fiFßÐlÁ=uòÇbD¡@\c¹RBf1z¡¾».Ú£)xUÄ3¯§X: ð`Åö w£¶6ÊüðInÆdÝºóU¾b¼û`U¦5b6b PThe³¶p!ÁÙÓo÷ð±U»OÓHL;·ÊR¤>5À/Ê
+_gp B¯º¼WCÈ¦Ò¤?K¥_<þAP°êeÎ*¼?8Ñ%Bê5jxÙ)f½h"KXÌ{%N9ÀfI,ÜgmÇFÃUÀÊ«:Í;÷O6F(ð«VWÄ[¿¤Ðh ÄHzsJµ·ªª£ùGà%£Ã KæÄõ~±=\ã¤Ã-ÿ[K(&Æ®DÅªo¨©g=vU/O0ñS@÷¯!~dIâ§_Æ	kÌuïòLg$¥ü~k55BR­´ÖÒkeÊãTÝ)Þâà)¡ÁlbÚ¥6y¬neÕ,ÝºÏÛ§{:T´}C>ÀnT   lìîëá%JËô~µü\j:ÿÈ6ÌSÈ¬ð6böý* +             backend.autographa.ioþ ú     'Ã¿áõÕ ·9o,{6Uþ\éñø`Î¹¹6yT ÐnP>kç"Å§°²¯¤Æ
+&àåÐu¯e*asF½/t¸ÓÓ§£}ÕqÁ S¦7,ºd¨öV¬~÷÷ó÷CòR°ÎyÏxÖÈ+X@h}©Ú°2¹ü÷%/¦®¿Ö¢Ïõùgw7#-
+0y5¼ë¸âô-%¯ëÅpJ½¨2´¥¬ßÊº Ä.F	)ÃIX¼ÔhÛØ ÆËaö[7?!èÆü¹NPP*OCº³ÒòfÃÎ~'Nûçâ7 #     h2http/1.1       -       DÍ  h2ÿ     JJ  ]
+2025-04-22 11:15:02.052 DEBUG 296401 --- [http-nio-8443-exec-6] o.a.coyote.http11.Http11InputBuffer      : Received [GET /swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config HTTP/1.1
+Host: backend.autographa.io:8443
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+
+]
+2025-04-22 11:15:14.895  INFO 296401 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-22 11:15:14.980  INFO 296401 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-22 11:15:25.720  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 297605 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:15:25.722  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:15:29.200  INFO 297605 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:15:29.201  INFO 297605 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:15:29.214  INFO 297605 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-04-22 11:15:29.327  INFO 297605 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:15:29.731  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-04-22 11:15:30.161  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-04-22 11:15:35.953  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Started Application in 10.861 seconds (JVM running for 11.414)
+2025-04-22 11:15:36.053 DEBUG 297605 --- [http-nio-8443-exec-1] o.a.coyote.http11.Http11InputBuffer      : Received [GET /swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config HTTP/1.1
+Host: backend.autographa.io:8443
+Connection: keep-alive
+Cache-Control: max-age=0
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36 Edg/135.0.0.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.9
+
+]
+2025-04-22 11:17:34.456  INFO 297605 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-04-22 11:17:34.483  INFO 297605 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-04-22 11:17:34.844  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 297605 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:17:34.845  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:17:35.657  INFO 297605 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:17:35.658  INFO 297605 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:17:35.671  INFO 297605 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/SURVEY]        : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:17:35.801  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-04-22 11:17:35.853  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-04-22 11:17:37.841  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Started Application in 3.04 seconds (JVM running for 133.303)
+2025-04-22 11:18:01.269  INFO 297605 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-04-22 11:18:01.346  INFO 297605 --- [Thread-12] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-04-22 11:18:01.816  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-22-237 with PID 297605 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-04-22 11:18:01.817  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-04-22 11:18:02.581  INFO 297605 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-04-22 11:18:02.582  INFO 297605 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-04-22 11:18:02.595  INFO 297605 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-04-22 11:18:02.709  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-04-22 11:18:02.745  INFO 297605 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-04-22 11:18:04.426  INFO 297605 --- [restartedMain] com.survey.geneza.Application            : Started Application in 2.649 seconds (JVM running for 159.888)
+2025-04-22 11:18:24.351  INFO 297605 --- [http-nio-8443-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-04-22 11:18:26.649  INFO 297605 --- [http-nio-8443-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 1425 ms
+2025-04-22 11:22:34.893  INFO 297605 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-04-22 11:22:34.922  INFO 297605 --- [Thread-27] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
