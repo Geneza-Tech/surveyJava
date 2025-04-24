@@ -11,6 +11,7 @@ public interface ResponseService {
     public List<Response> findAllByParticipantId(Integer  participant);
     public List<Response> findAllBySurveyIdAndQuestionId(Integer surveyId, Integer questionId);
     public List<Response> findByLinkTypeAndLinkId(String linkType, Integer linkId);
+    public List<Response> findByBatchIdAndLinkId(String batchId, Integer linkId);
     List<Response> getResponsesByPersonId(Integer personId);
 
 

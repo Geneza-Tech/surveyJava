@@ -108,16 +108,23 @@
 			</dependency>
 
 			<dependency>
-			    <groupId>org.springdoc</groupId>
-			    <artifactId>springdoc-openapi-ui</artifactId>
-			    <version>1.2.32</version>
-			</dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.9.2</version> <!-- Compatible with Spring Boot 2.0.x -->
+</dependency>
+<dependency>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.9.2</version>
+</dependency>
 
             <dependency>
 		    <groupId>org.javassist</groupId>
 		    <artifactId>javassist</artifactId>
 		    <version>3.23.1-GA</version>
 		    </dependency>
+				
+			
 
 	</dependencies>
 

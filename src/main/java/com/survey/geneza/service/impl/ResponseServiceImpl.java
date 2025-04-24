@@ -68,6 +68,11 @@ public class ResponseServiceImpl implements ResponseService {
         return responseRepository.findByLinkTypeAndLinkId(linkType, linkId);
     }
 
+    @Transactional
+    public List<Response> findByBatchIdAndLinkId(String batchId, Integer linkId) {
+        return responseRepository.findByBatchIdAndLinkId(batchId, linkId);
+    }
+
     @Override
     public List<Response> getResponsesByPersonId(Integer personId) {
         return responseRepository.findAllByPersonId(personId);

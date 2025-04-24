@@ -24,5 +24,7 @@ List<Response> findAllByPersonId(Integer personId);
 
    Page<Response> findAll(Pageable pageable);
    List<Response> findByLinkTypeAndLinkId(String linkType, Integer linkId);
+   List<Response> findByBatchIdAndLinkId(String batchId, Integer linkId);
+
 
 }

@@ -121,5 +121,13 @@ public class ResponseRestController {
         return ResponseEntity.ok(responses);
     }
 
+    @RequestMapping(value = "/Response/linkIdBatchId", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Response> findByBatchIdAndLinkId(
+            @RequestParam("batchId") String batchId,
+            @RequestParam("linkId") Integer linkId) {
+        return responseService.findByBatchIdAndLinkId(batchId, linkId);
+    }
+
 
 }

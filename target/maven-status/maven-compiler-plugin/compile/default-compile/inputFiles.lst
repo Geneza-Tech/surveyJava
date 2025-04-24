@@ -16,6 +16,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/QuestionService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/QuestionRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/GridDisplayRestController.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/config/config.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/ResponseAnswersRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Response.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/ResponseAnswersRestController.java

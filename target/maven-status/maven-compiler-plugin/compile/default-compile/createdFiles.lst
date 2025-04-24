@@ -68,5 +68,6 @@ com/survey/geneza/domain/Role.class
 com/survey/geneza/web/rest/ParticipantRestController.class
 com/survey/geneza/security/CustomUserDetailsService.class
 com/survey/geneza/service/QuestionTypeService.class
+com/survey/geneza/config/config.class
 com/survey/geneza/service/impl/ResponseAnswersServiceImpl.class
 com/survey/geneza/domain/Person.class

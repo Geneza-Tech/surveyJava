@@ -51,6 +51,11 @@ public class Response implements Serializable {
     @JoinColumn(name="participant")
     private Participant participant;
 
+    @Column(name = "batchid")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private Integer batchId;
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -64,6 +69,15 @@ public class Response implements Serializable {
     public Survey getSurvey() {
         return survey;
     }
+
+    public Integer getBatchId() {
+        return batchId;
+    }
+    
+    public void setBatchId(Integer batchId) {
+        this.batchId = batchId;
+    }
+    
     
     public void setSurvey(Survey survey) {
         this.survey = survey;
