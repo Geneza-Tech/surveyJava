@@ -129,5 +129,15 @@ public class ResponseRestController {
         return responseService.findByBatchIdAndLinkId(batchId, linkId);
     }
 
+    @RequestMapping(value = "/Response/search", method = RequestMethod.GET)
+@ResponseBody
+public List<Response> searchResponses(
+        @RequestParam(value = "batchId", required = false) Integer batchId,
+        @RequestParam(value = "personId", required = false) Integer personId,
+        @RequestParam(value = "linkId", required = false) Integer linkId,
+        @RequestParam(value = "surveyId", required = false) Integer surveyId) {
+    return responseService.searchResponses(batchId, personId, linkId, surveyId);
+}
+
 
 }

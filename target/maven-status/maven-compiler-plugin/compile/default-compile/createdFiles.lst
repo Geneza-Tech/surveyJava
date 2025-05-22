@@ -1,8 +1,11 @@
+com/survey/geneza/service/AnswerOptionTemplateItemService.class
+com/survey/geneza/domain/AnswerOptionTemplateItem.class
 com/survey/geneza/service/ImageService.class
 com/survey/geneza/Application.class
 com/survey/geneza/security/ServerConfiguration.class
 com/survey/geneza/security/MyCorsFilter.class
 com/survey/geneza/service/QuestionService.class
+com/survey/geneza/web/rest/AnswerOptionTemplateRestController.class
 com/survey/geneza/domain/Response.class
 com/survey/geneza/persistence/ImageRepository.class
 com/survey/geneza/service/ParticipantService.class
@@ -14,6 +17,8 @@ com/survey/geneza/domain/Question.class
 com/survey/geneza/persistence/PersonRepository.class
 com/survey/geneza/utilities/NotificationService.class
 com/survey/geneza/service/impl/PersonServiceImpl.class
+com/survey/geneza/domain/AnswerOptionTemplate.class
+com/survey/geneza/web/rest/AnswerOptionTemplateItemRestController.class
 com/survey/geneza/service/impl/SurveyServiceImpl.class
 com/survey/geneza/security/ServerConfiguration$ResourceServerConfiguration.class
 com/survey/geneza/security/CustomUserDetailsService$UserRepositoryUserDetails.class
@@ -29,6 +34,7 @@ com/survey/geneza/security/WebSecurityConfiguration.class
 com/survey/geneza/web/rest/AnswerOptionRestController.class
 com/survey/geneza/domain/GridDisplay.class
 com/survey/geneza/service/ResponseAnswersService.class
+com/survey/geneza/service/impl/AnswerOptionTemplateItemServiceImpl.class
 com/survey/geneza/domain/ResponseAnswers.class
 com/survey/geneza/service/PersonService.class
 com/survey/geneza/domain/Participant.class
@@ -40,13 +46,17 @@ com/survey/geneza/persistence/ParticipantRepository.class
 com/survey/geneza/web/rest/ImageRestController.class
 com/survey/geneza/service/impl/ResponseServiceImpl.class
 com/survey/geneza/domain/Survey.class
+com/survey/geneza/service/impl/AnswerOptionTemplateServiceImpl.class
 com/survey/geneza/persistence/RoleRepository.class
 com/survey/geneza/service/impl/ImageServiceImpl.class
 com/survey/geneza/service/ResponseService.class
+com/survey/geneza/service/AnswerOptionTemplateService.class
 com/survey/geneza/service/impl/QuestionServiceImpl.class
 com/survey/geneza/web/rest/QuestionTypeRestController.class
+com/survey/geneza/persistence/AnswerOptionTemplateRepository.class
 com/survey/geneza/service/impl/RoleServiceImpl.class
 com/survey/geneza/persistence/SurveyRepository.class
+com/survey/geneza/persistence/AnswerOptionTemplateItemRepository.class
 com/survey/geneza/web/rest/QuestionRestController.class
 com/survey/geneza/service/exception/ServiceException.class
 com/survey/geneza/utilities/PaymentService.class

@@ -30,16 +30,38 @@ public class PersonServiceImpl implements PersonService {
     public void savePerson(Person person) {
         Person existingPerson = personRepository.findById(person.getId());
         if (existingPerson != null) {
-        if (existingPerson != person) {      
-        existingPerson.setId(person.getId());
-                existingPerson.setEmail(person.getEmail());
+            if (existingPerson != person) {
+                existingPerson.setId(person.getId());
                 existingPerson.setFirstName(person.getFirstName());
+                existingPerson.setMiddleName(person.getMiddleName()); // new field
                 existingPerson.setLastName(person.getLastName());
                 existingPerson.setPhone(person.getPhone());
-        }
-        person = personRepository.save(existingPerson);
-    }else{
-        person = personRepository.save(person);
+                existingPerson.setEmail(person.getEmail());
+                existingPerson.setRollNumber(person.getRollNumber());
+                existingPerson.setCountry(person.getCountry());
+                existingPerson.setState(person.getState());
+                existingPerson.setRegion(person.getRegion());
+                existingPerson.setPresentStatus(person.getPresentStatus());
+                existingPerson.setvalidationstatus(person.getvalidationstatus());
+                existingPerson.setValidationComment(person.getValidationComment()); // new field
+                existingPerson.setGender(person.getGender());
+                existingPerson.setDob(person.getDob());
+                existingPerson.setEnrollmentDate(person.getEnrollmentDate()); // new field
+                existingPerson.setaddress(person.getaddress());
+                existingPerson.setZone(person.geZone());
+                existingPerson.setFatherName(person.getFatherName());
+                existingPerson.setMaritalStatus(person.getMaritalStatus());
+                existingPerson.setSpouseName(person.getSpouseName());
+                existingPerson.setPincode(person.getPincode());
+                existingPerson.setDateOfJoining(person.getDateOfJoining()); // new field
+                existingPerson.setDateOfLeaving(person.getDateOfLeaving());
+                existingPerson.setHighestQualification(person.getHighestQualification()); // new field
+                existingPerson.setPhoto(person.getPhoto()); // new field 
+                existingPerson.setReasonOfLeaving(person.getReasonOfLeaving());
+            }
+            person = personRepository.save(existingPerson);
+        } else {
+            person = personRepository.save(person);
         }
         personRepository.flush();
     }

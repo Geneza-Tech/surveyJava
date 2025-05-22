@@ -8,4 +8,5 @@ public interface AnswerOptionService {
     public boolean deleteAnswerOption(Integer answerOptionId);
     public List<AnswerOption> findAll();
     public List<AnswerOption> findAllByQuestionId(Integer  question);
+    void createAnswerOptionsFromTemplate(Integer answerOptionTemplateId, Integer questionId);
 }

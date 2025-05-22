@@ -1,16 +1,21 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/PersonRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/ResponseService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/GridDisplayService.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/AnswerOptionTemplateRepository.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/AnswerOptionTemplate.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/ResponseRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/QuestionType.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/ResponseRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/AnswerOptionServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/GridDisplay.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/QuestionRepository.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/AnswerOptionTemplateItemRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/PersonRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/AnswerOption.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/ResponseServiceImpl.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/AnswerOptionTemplateItemService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/ImageRepository.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/AnswerOptionTemplateRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/UserServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/UserRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/QuestionService.java
@@ -20,6 +25,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/ResponseAnswersRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Response.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/ResponseAnswersRestController.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/AnswerOptionTemplateService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/utilities/NotificationService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/QuestionTypeRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/ImageRestController.java
@@ -28,6 +34,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/security/WebSecurityConfiguration.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/security/CustomUserDetailsService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/GridDisplayServiceImpl.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/AnswerOptionTemplateServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/ResponseAnswers.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/ImageService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/Application.java
@@ -36,7 +43,9 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/AnswerOptionService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/ParticipantServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/RoleService.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/AnswerOptionTemplateItemServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Participant.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/AnswerOptionTemplateItemRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/exception/ServiceException.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/InvalidLoginException.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/PersonServiceImpl.java
@@ -67,3 +76,4 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/SurveyRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/ImageServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/UserService.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/AnswerOptionTemplateItem.java

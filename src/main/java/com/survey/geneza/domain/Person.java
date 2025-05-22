@@ -3,6 +3,7 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.*;
 import javax.xml.bind.annotation.*;
+import com.survey.geneza.domain.enums.ValidationStatus;
 
 /**
  * Person Entity
@@ -21,11 +22,15 @@ public class Person implements Serializable {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "firstName")
+    @Column(name = "firstname")
     @XmlElement
     private String firstName;
 
-    @Column(name = "lastName")
+    @Column(name = "middlename") // NEW FIELD
+    @XmlElement
+    private String middleName;
+
+    @Column(name = "lastname")
     @XmlElement
     private String lastName;
 
@@ -57,6 +62,11 @@ public class Person implements Serializable {
     @XmlElement
     private String presentStatus;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "validationstatus")
+    @XmlElement
+    private ValidationStatus validationstatus;
+
     @Column(name = "gender")
     @XmlElement
     private String gender;
@@ -66,25 +76,19 @@ public class Person implements Serializable {
     @XmlElement
     private Date dob;
 
-    @Column(name = "presentAddressStreet")
+    @Column(name = "address")
     @XmlElement
-    private String presentAddressStreet;
+    private String address;
 
-    @Column(name = "presentAddressState")
+    @Column(name = "pincode")
     @XmlElement
-    private String presentAddressState;
+    private String pincode;
 
-    @Column(name = "presentAddressCity")
-    @XmlElement
-    private String presentAddressCity;
 
-    @Column(name = "presentAddressPin")
+    @Column(name = "zone")
     @XmlElement
-    private String presentAddressPin;
+    private String zone;
 
-    @Column(name = "presentAddressCountry")
-    @XmlElement
-    private String presentAddressCountry;
 
     @Column(name = "fatherName")
     @XmlElement
@@ -103,10 +107,45 @@ public class Person implements Serializable {
     @XmlTransient
     private Country countryId;
 
+    @Column(name = "validationcomment") // NEW FIELD
+    @XmlElement
+    private String validationComment;
+
+    @Column(name = "enrollmentdate") // NEW FIELD
+    @Temporal(TemporalType.DATE)
+    @XmlElement
+    private Date enrollmentDate;
+
+    @Column(name = "date_of_joining")
+    @Temporal(TemporalType.DATE)
+    @XmlElement
+    private Date dateOfJoining;
+
+    @Column(name = "date_of_leaving")
+    @Temporal(TemporalType.DATE)
+    @XmlElement
+    private Date dateOfLeaving;
+
+    @Column(name = "reasonOfLeaving") // NEW FIELD
+    @XmlElement
+    private String reasonOfLeaving;
+
+
+    @Column(name = "highestqualification") // NEW FIELD
+    @XmlElement
+    private String highestQualification;
+
+    @Column(name = "photo") // Now storing a URL string instead of binary data
+    @XmlElement
+    private String photo;
+
 
     // Getters and Setters
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
+
+    public ValidationStatus getvalidationstatus() { return validationstatus; }
+    public void setvalidationstatus(ValidationStatus validationstatus) { this.validationstatus = validationstatus; }
     
     public String getFirstName() { return firstName; }
     public void setFirstName(String firstName) { this.firstName = firstName; }
@@ -141,20 +180,14 @@ public class Person implements Serializable {
     public Date getDob() { return dob; }
     public void setDob(Date dob) { this.dob = dob; }
     
-    public String getPresentAddressStreet() { return presentAddressStreet; }
-    public void setPresentAddressStreet(String presentAddressStreet) { this.presentAddressStreet = presentAddressStreet; }
+    public String getaddress() { return address; }
+    public void setaddress(String address) { this.address = address; }
     
-    public String getPresentAddressState() { return presentAddressState; }
-    public void setPresentAddressState(String presentAddressState) { this.presentAddressState = presentAddressState; }
+    public String geZone() { return zone; }
+    public void setZone(String zone) { this.zone = zone; }
     
-    public String getPresentAddressCity() { return presentAddressCity; }
-    public void setPresentAddressCity(String presentAddressCity) { this.presentAddressCity = presentAddressCity; }
-    
-    public String getPresentAddressPin() { return presentAddressPin; }
-    public void setPresentAddressPin(String presentAddressPin) { this.presentAddressPin = presentAddressPin; }
-    
-    public String getPresentAddressCountry() { return presentAddressCountry; }
-    public void setPresentAddressCountry(String presentAddressCountry) { this.presentAddressCountry = presentAddressCountry; }
+    public String getPincode() { return pincode; }
+    public void setPincode(String pincode) { this.pincode = pincode; }
     
     public String getFatherName() { return fatherName; }
     public void setFatherName(String fatherName) { this.fatherName = fatherName; }
@@ -164,6 +197,41 @@ public class Person implements Serializable {
     
     public String getSpouseName() { return spouseName; }
     public void setSpouseName(String spouseName) { this.spouseName = spouseName; }
+
+    public String getMiddleName() { return middleName; }
+    public void setMiddleName(String middleName) { this.middleName = middleName; }
+
+    public Date getEnrollmentDate() { return enrollmentDate; }
+    public void setEnrollmentDate(Date enrollmentDate) { this.enrollmentDate = enrollmentDate; }
+
+    public String getHighestQualification() { return highestQualification; }
+    public void setHighestQualification(String highestQualification) { this.highestQualification = highestQualification; }
+
+    public String getPhoto() { return photo; }
+    public void setPhoto(String photo) { this.photo = photo; }
+
+    public String getValidationComment() { return validationComment; }
+    public void setValidationComment(String validationComment) { this.validationComment = validationComment; }
+
+    public Date getDateOfJoining() {
+    return dateOfJoining;
+    }
+
+    public void setDateOfJoining(Date dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
+    }
+
+    public String getReasonOfLeaving() { return reasonOfLeaving; }
+    public void setReasonOfLeaving(String reasonOfLeaving) { this.reasonOfLeaving = reasonOfLeaving; }
+
+    public Date getDateOfLeaving() {
+        return dateOfLeaving;
+    }
+
+    public void setDateOfLeaving(Date dateOfLeaving) {
+        this.dateOfLeaving = dateOfLeaving;
+    }
+
 
     public Person() {
     }

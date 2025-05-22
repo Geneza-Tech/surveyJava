@@ -1,14 +1,24 @@
 package com.survey.geneza.web.rest; 
 import com.survey.geneza.domain.AnswerOption;
+import com.survey.geneza.domain.AnswerOptionTemplate;
+import com.survey.geneza.domain.AnswerOptionTemplateItem;
+import com.survey.geneza.domain.Question;
 import com.survey.geneza.persistence.AnswerOptionRepository;
+import com.survey.geneza.persistence.AnswerOptionTemplateItemRepository;
+import com.survey.geneza.persistence.AnswerOptionTemplateRepository;
+import com.survey.geneza.persistence.QuestionRepository;
 import com.survey.geneza.service.AnswerOptionService;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.data.domain.PageRequest;
@@ -27,7 +37,13 @@ public class AnswerOptionRestController {
     private AnswerOptionRepository answerOptionRepository;
 
     @Autowired
+    private AnswerOptionTemplateItemRepository answerOptionTemplateItemRepository;
+
+    @Autowired
     private AnswerOptionService answerOptionService;
+
+    @Autowired
+    private QuestionRepository questionRepository;
 
     @RequestMapping(value = "/AnswerOption", method = RequestMethod.PUT)
     @ResponseBody
@@ -89,5 +105,23 @@ public class AnswerOptionRestController {
     public List<AnswerOption> getAllByQuestionId(@PathVariable("question_id") Integer questionId) {
         return new java.util.ArrayList<AnswerOption>(answerOptionService.findAllByQuestionId(questionId));
     }
+
+    @RequestMapping(value = "/AnswerOption/{templateId}/ToQuestion/{questionId}", method = RequestMethod.POST)
+@ResponseBody
+public void createAnswerOptionsFromTemplate(Integer templateId, Integer questionId) {
+    List<AnswerOptionTemplateItem> items = answerOptionTemplateItemRepository.findByAnswerOptionTemplate_Id(templateId);
+    Question question = questionRepository.findById(questionId).orElse(null);
+
+     int sequenceCounter = 1;
+
+    for (AnswerOptionTemplateItem item : items) {
+        AnswerOption answerOption = new AnswerOption();
+        answerOption.setOptionValue(item.getAnswerOption());
+        answerOption.setSequence(sequenceCounter++);
+        answerOption.setQuestion(question);
+        answerOptionRepository.save(answerOption);
+    }
+}
+
 
 }

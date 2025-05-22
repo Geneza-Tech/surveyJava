@@ -16,9 +16,10 @@ public class QuestionServiceImpl implements QuestionService {
     public QuestionServiceImpl() {
     }
 
-    @Transactional
+@Transactional
     public Question findById(Integer id) {
-        return questionRepository.findById(id);
+        return questionRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Question not found with ID: " + id));
     }
 
     @Transactional
@@ -28,34 +29,36 @@ public class QuestionServiceImpl implements QuestionService {
      
     @Transactional
     public void saveQuestion(Question question) {
-        Question existingQuestion = questionRepository.findById(question.getId());
+        Question existingQuestion = question.getId() != null
+            ? questionRepository.findById(question.getId()).orElse(null)
+            : null;
+
         if (existingQuestion != null) {
-        if (existingQuestion != question) {      
-        existingQuestion.setId(question.getId());
-                existingQuestion.setSurvey(question.getSurvey());
-                existingQuestion.setSection(question.getSection());
-                existingQuestion.setQuestionType(question.getQuestionType());
-                existingQuestion.setChildOrder(question.getChildOrder());
-                existingQuestion.setSurveyOrder(question.getSurveyOrder());
-                existingQuestion.setParentQuestion(question.getParentQuestion());
-                existingQuestion.setText(question.getText());
+            existingQuestion.setSurvey(question.getSurvey());
+            existingQuestion.setSection(question.getSection());
+            existingQuestion.setQuestionType(question.getQuestionType());
+            existingQuestion.setChildOrder(question.getChildOrder());
+            existingQuestion.setSurveyOrder(question.getSurveyOrder());
+            existingQuestion.setParentQuestion(question.getParentQuestion());
+            existingQuestion.setText(question.getText());
+            questionRepository.save(existingQuestion);
+        } else {
+            questionRepository.save(question);
         }
-        question = questionRepository.save(existingQuestion);
-    }else{
-        question = questionRepository.save(question);
-        }
+
         questionRepository.flush();
     }
 
     public boolean deleteQuestion(Integer questionId) {
-        Question question = questionRepository.findById(questionId);
-        if(question!=null) {
+        Question question = questionRepository.findById(questionId).orElse(null);
+        if (question != null) {
             questionRepository.delete(question);
             return true;
-        }else {
-            return false;
         }
-    }@Transactional
+        return false;
+    }
+    
+    @Transactional
     public List<Question> findAllBySurveyId(Integer  surveyId) {
         return new java.util.ArrayList<Question>(questionRepository.findAllBySurveyId(surveyId));
     }@Transactional

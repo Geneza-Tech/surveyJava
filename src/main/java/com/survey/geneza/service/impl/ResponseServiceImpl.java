@@ -37,6 +37,7 @@ public class ResponseServiceImpl implements ResponseService {
                 existingResponse.setLinkType(response.getLinkType()); // new line
                 existingResponse.setLinkId(response.getLinkId());
                 existingResponse.setlinkcomment(response.getlinkcomment());
+                existingResponse.setBatchId(response.getBatchId());
         }
         response = responseRepository.save(existingResponse);
     }else{
@@ -77,6 +78,12 @@ public class ResponseServiceImpl implements ResponseService {
     public List<Response> getResponsesByPersonId(Integer personId) {
         return responseRepository.findAllByPersonId(personId);
     }
+
+    @Override
+public List<Response> searchResponses(Integer batchId, Integer personId, Integer linkId, Integer surveyId) {
+    return responseRepository.searchResponses(batchId, personId, linkId, surveyId);
+}
+
 
 
 }
