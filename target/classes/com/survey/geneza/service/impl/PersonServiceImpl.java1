@@ -1,0 +1,80 @@
+package  com.survey.geneza.service.impl;
+import  com.survey.geneza.persistence.PersonRepository;
+import  com.survey.geneza.domain.Person;
+import  com.survey.geneza.service.PersonService;
+import  com.survey.geneza.utilities.NotificationService;
+
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+@Service("PersonService")
+@Transactional
+public class PersonServiceImpl implements PersonService {
+    
+    private Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);
+
+    
+    @Autowired
+    private PersonRepository personRepository;
+    
+    @Autowired
+    private NotificationService notificationService;
+    
+    public PersonServiceImpl() {
+    }
+
+    @Transactional
+    public Person findById(Integer id) {
+        return personRepository.findById(id);
+    }
+
+    @Transactional
+    public List<Person> findAll() {
+        return personRepository.findAll();
+    }
+     
+    @Transactional
+    public void savePerson(Person person) {
+        Person existingPerson = personRepository.findById(person.getId());
+        if (existingPerson != null) {
+        if (existingPerson != person) {    
+        existingPerson.setId(person.getId());
+                existingPerson.setFirstName(person.getFirstName());
+                existingPerson.setLastName(person.getLastName());
+                existingPerson.setEmail(person.getEmail());
+                existingPerson.setPhone(person.getPhone());
+                existingPerson.setAddress1(person.getAddress1());
+                existingPerson.setAddress2(person.getAddress2());
+                existingPerson.setProjectLimit(person.getProjectLimit());
+        }
+        person = personRepository.save(existingPerson);
+    }else{
+        person.setProjectLimit(1);
+        person = personRepository.save(person);
+        if(person.getEmail()!=""){
+            try {
+                
+                System.out.println("I have arrived");
+                notificationService.sendNotification("Welcome to Dunamis",
+                        "Dear " + person.getFirstName() + 
+                        ",\nThanks for signing up. You can now create your demo project and generate code." +
+                        ",\nDo write to us at josh@dunamis.io for support/ training/ purchase." +
+                        "\n\nRegards," +
+                        "\nTeam Dunamis"                                            
+                        ,person.getEmail());
+            }catch( Exception e ){
+                logger.info("Error Sending Email: " + e.getMessage());
+            }
+        } 
+        }
+        personRepository.flush();
+    }
+
+    
+
+}
