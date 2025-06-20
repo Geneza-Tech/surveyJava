@@ -29,6 +29,12 @@ public class QuestionServiceImpl implements QuestionService {
      
     @Transactional
     public void saveQuestion(Question question) {
+        if (question.getParentQuestion() != null && question.getId() != null &&
+        question.getId().equals(question.getParentQuestion().getId())) {
+        throw new IllegalArgumentException("A question cannot be its own parent.");
+    }
+
+
         Question existingQuestion = question.getId() != null
             ? questionRepository.findById(question.getId()).orElse(null)
             : null;

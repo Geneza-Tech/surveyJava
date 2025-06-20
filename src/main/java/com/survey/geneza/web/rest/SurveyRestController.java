@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.data.domain.Page;
@@ -83,6 +84,12 @@ public class SurveyRestController {
 		Pageable sortedPaged = PageRequest.of(page, 10, sort);
     	return (surveyRepository.findAll(sortedPaged));
     }
+
+@RequestMapping(value = "/Survey//Duplicate/{id}", method = RequestMethod.POST)
+@ResponseBody
+public Survey duplicateSurvey(@PathVariable Integer id, @RequestParam String name) {
+    return surveyService.duplicateSurvey(id,name);
+}
 
 
 }

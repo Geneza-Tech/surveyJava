@@ -7,4 +7,5 @@ public interface SurveyService {
     public void saveSurvey(Survey survey_1);
     public boolean deleteSurvey(Integer surveyId);
     public List<Survey> findAll();
+    Survey duplicateSurvey(Integer surveyId, String surveyName);
 }

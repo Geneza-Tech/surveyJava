@@ -69,6 +69,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Question.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/QuestionTypeService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/ResponseAnswersService.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/enums/ValidationStatus.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/PersonService.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/QuestionTypeServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/ParticipantRepository.java

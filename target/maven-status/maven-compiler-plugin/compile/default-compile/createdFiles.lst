@@ -48,6 +48,7 @@ com/survey/geneza/service/impl/ResponseServiceImpl.class
 com/survey/geneza/domain/Survey.class
 com/survey/geneza/service/impl/AnswerOptionTemplateServiceImpl.class
 com/survey/geneza/persistence/RoleRepository.class
+com/survey/geneza/domain/enums/ValidationStatus.class
 com/survey/geneza/service/impl/ImageServiceImpl.class
 com/survey/geneza/service/ResponseService.class
 com/survey/geneza/service/AnswerOptionTemplateService.class
