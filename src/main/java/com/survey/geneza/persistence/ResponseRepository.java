@@ -1,5 +1,7 @@
 package com.survey.geneza.persistence;  
 import com.survey.geneza.domain.Response;
+
+import java.math.BigInteger;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.dao.DataAccessException;
@@ -40,5 +42,42 @@ List<Response> searchResponses(
 
 //    List<Response> findByBatchIdAndPersonIdAndLinkIdAndSurveyId(String batchId, Integer personId, Integer linkId,
 //         Integer surveyId);
+
+// @Query(value = "SELECT e.batch " +
+//                "FROM enrollment e " +
+//                "JOIN participant p ON e.student = p.person " +
+//                "WHERE p.id = :participantId " +
+//                "LIMIT 1", nativeQuery = true)
+
+//     Integer findBatchFromEnrollment(@Param("participantId") Integer participantId);
+
+// @Query(value = "SELECT e.batch " +
+//                "FROM enrollment e " +
+//                "JOIN participant p ON e.student = p.person " +
+//                "WHERE p.id = :participantId " +
+//                "LIMIT 1", nativeQuery = true)
+
+//     Integer findBatchFromMentor(@Param("participantId") Integer participantId);
+
+//     @Query(value = "SELECT bm.batchid " +
+//                "FROM batchmentor bm " +
+//                "JOIN mentor m ON bm.mentorid = m.id " +
+//                "JOIN participant p ON m.mentorid = p.person " +
+//                "WHERE p.id = :participantId " +
+//                "LIMIT 1", nativeQuery = true)
+//     Integer findBatchFromTrainer(@Param("participantId") Integer participantId);
+
+
+@Query(value = "SELECT b.id, b.batch FROM batch b WHERE b.id IN (" +
+               "SELECT e.batch FROM enrollment e WHERE e.student = :personId " +
+               "UNION " +
+               "SELECT bm.batchid FROM batchmentor bm JOIN mentor m ON bm.mentorid = m.id WHERE m.mentorid = :personId " +
+               "UNION " +
+               "SELECT bt.batchid FROM batchtrainer bt JOIN trainer t ON bt.trainerid = t.id WHERE t.trainerid = :personId" +
+               ")", nativeQuery = true)
+List<Object[]> findAllBatchIdsLinkedToPerson(@Param("personId") Integer personId);
+
+List<Response> findByParticipantAndLinkIdAndBatchId(Integer participant, Integer linkId, Integer batchId);
+
 
 }

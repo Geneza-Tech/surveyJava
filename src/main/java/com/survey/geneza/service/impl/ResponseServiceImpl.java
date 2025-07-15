@@ -2,7 +2,11 @@ package com.survey.geneza.service.impl;
 import com.survey.geneza.persistence.ResponseRepository;
 import com.survey.geneza.domain.Response;
 import com.survey.geneza.service.ResponseService;
+
+import java.math.BigInteger;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -28,6 +32,24 @@ public class ResponseServiceImpl implements ResponseService {
      
     @Transactional
     public void saveResponse(Response response) {
+    //     if (response.getBatchId() == null && response.getParticipant() != null) {
+    //     Integer participantId = response.getParticipant().getId();
+
+    //     // Try Enrollment first
+    //     Integer batchId = responseRepository.findBatchFromEnrollment(participantId);
+
+    //     // If not found, try BatchMentor
+    //     if (batchId == null) {
+    //         batchId = responseRepository.findBatchFromMentor(participantId);
+    //     }
+
+    //     // If still not found, try BatchTrainer
+    //     if (batchId == null) {
+    //         batchId = responseRepository.findBatchFromTrainer(participantId);
+    //     }
+
+    //     response.setBatchId(batchId); // Can be null if all fail
+    // }
         Response existingResponse = responseRepository.findById(response.getId());
         if (existingResponse != null) {
         if (existingResponse != response) {      
@@ -84,6 +106,23 @@ public List<Response> searchResponses(Integer batchId, Integer personId, Integer
     return responseRepository.searchResponses(batchId, personId, linkId, surveyId);
 }
 
+// @Override
+// @Transactional(readOnly = true)
+// public List<Long> getAllBatchIdsLinkedToPerson(Integer personId) {
+//     List<BigInteger> batchIds = responseRepository.findAllBatchIdsLinkedToPerson(personId);
+//     return batchIds.stream()
+//                    .map(BigInteger::longValue)
+//                    .collect(Collectors.toList());
+// }
 
+@Override
+@Transactional(readOnly = true)
+public List<Object[]> getAllBatchIdsLinkedToPerson(Integer personId) {
+    return responseRepository.findAllBatchIdsLinkedToPerson(personId);
+}
 
+@Override
+    public List<Response> findByParticipantAndLinkIdAndBatchId(Integer participant, Integer linkId, Integer batchId) {
+        return responseRepository.findByParticipantAndLinkIdAndBatchId(participant, linkId, batchId);
+    }
 }

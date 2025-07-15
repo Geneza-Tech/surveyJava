@@ -99,7 +99,10 @@ public void createAnswerOptionsFromTemplate(Integer answerOptionTemplateId, Inte
     }
 }
 
-
+@Override
+    public List<AnswerOption> getAnswerOptionsBySurveyId(Integer surveyId) {
+        return answerOptionRepository.findAnswerOptionsBySurveyId(surveyId);
+    }
 
 
 

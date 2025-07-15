@@ -9,4 +9,5 @@ public interface AnswerOptionService {
     public List<AnswerOption> findAll();
     public List<AnswerOption> findAllByQuestionId(Integer  question);
     void createAnswerOptionsFromTemplate(Integer answerOptionTemplateId, Integer questionId);
+    List<AnswerOption> getAnswerOptionsBySurveyId(Integer surveyId);
 }

@@ -124,4 +124,10 @@ public void createAnswerOptionsFromTemplate(Integer templateId, Integer question
 }
 
 
+    @RequestMapping(value = "/AnswerOption/Survey/{surveyId}", method = RequestMethod.GET)
+    @ResponseBody
+    public List<AnswerOption> getAnswerOptionsBySurveyId(@PathVariable("surveyId") Integer surveyId) {
+        return answerOptionRepository.findAnswerOptionsBySurveyId(surveyId);
+    }
+
 }

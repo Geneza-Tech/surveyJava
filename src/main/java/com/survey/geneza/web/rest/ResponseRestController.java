@@ -2,7 +2,13 @@ package com.survey.geneza.web.rest;
 import com.survey.geneza.domain.Response;
 import com.survey.geneza.persistence.ResponseRepository;
 import com.survey.geneza.service.ResponseService;
+
+import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -139,5 +145,26 @@ public List<Response> searchResponses(
     return responseService.searchResponses(batchId, personId, linkId, surveyId);
 }
 
+ @RequestMapping(value = "/Response/{personId}/batches", method = RequestMethod.GET)
+@ResponseBody
+public ResponseEntity<List<Map<String, Object>>> getBatches(@PathVariable Integer personId) {
+    List<Object[]> rows = responseService.getAllBatchIdsLinkedToPerson(personId);
+    List<Map<String, Object>> result = rows.stream().map(row -> {
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", ((BigInteger) row[0]).longValue());
+        map.put("batch", row[1]);
+        return map;
+    }).collect(Collectors.toList());
+    return ResponseEntity.ok(result);
+}
+
+@RequestMapping(value = "/Response/participantLinkBatch", method = RequestMethod.GET)
+@ResponseBody
+public List<Response> getByParticipantLinkAndBatch(
+        @RequestParam("participant") Integer participant,
+        @RequestParam("linkId") Integer linkId,
+        @RequestParam("batchId") Integer batchId) {
+    return responseService.findByParticipantAndLinkIdAndBatchId(participant, linkId, batchId);
+}
 
 }
