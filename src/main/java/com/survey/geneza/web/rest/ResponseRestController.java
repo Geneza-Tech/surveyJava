@@ -141,8 +141,9 @@ public List<Response> searchResponses(
         @RequestParam(value = "batchId", required = false) Integer batchId,
         @RequestParam(value = "personId", required = false) Integer personId,
         @RequestParam(value = "linkId", required = false) Integer linkId,
+        @RequestParam(value = "role", required = false) String role,
         @RequestParam(value = "surveyId", required = false) Integer surveyId) {
-    return responseService.searchResponses(batchId, personId, linkId, surveyId);
+    return responseService.searchResponses(batchId, personId, linkId,role, surveyId);
 }
 
  @RequestMapping(value = "/Response/{personId}/batches", method = RequestMethod.GET)

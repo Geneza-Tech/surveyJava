@@ -33,6 +33,7 @@ public class ParticipantServiceImpl implements ParticipantService {
         if (existingParticipant != participant) {      
         existingParticipant.setId(participant.getId());
                 existingParticipant.setPerson(participant.getPerson());
+                existingParticipant.setRole(participant.getRole());
         }
         participant = participantRepository.save(existingParticipant);
     }else{

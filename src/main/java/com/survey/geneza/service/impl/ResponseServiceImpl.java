@@ -102,8 +102,8 @@ public class ResponseServiceImpl implements ResponseService {
     }
 
     @Override
-public List<Response> searchResponses(Integer batchId, Integer personId, Integer linkId, Integer surveyId) {
-    return responseRepository.searchResponses(batchId, personId, linkId, surveyId);
+public List<Response> searchResponses(Integer batchId, Integer personId, Integer linkId,String role, Integer surveyId) {
+    return responseRepository.searchResponses(batchId, personId, linkId,role, surveyId);
 }
 
 // @Override

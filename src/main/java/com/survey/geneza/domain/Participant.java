@@ -4,7 +4,6 @@ import java.lang.StringBuilder;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import javax.persistence.Id;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
@@ -35,6 +34,10 @@ public class Participant implements Serializable {
     @JoinColumn(name="person")
     private Person person;
 
+    @Column(name = "role")
+    @XmlElement
+    private String role;
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -43,6 +46,9 @@ public class Participant implements Serializable {
     public Integer getId() {
         return this.id;
     }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 
         
     public Person getPerson() {
