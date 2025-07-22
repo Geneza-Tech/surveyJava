@@ -30,6 +30,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/persistence/QuestionTypeRepository.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/ImageRestController.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/utilities/PaymentService.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/dto/ResponseWithBatchDTO.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Image.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/security/WebSecurityConfiguration.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/security/CustomUserDetailsService.java

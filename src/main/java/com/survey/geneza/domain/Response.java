@@ -56,6 +56,10 @@ public class Response implements Serializable {
     @XmlElement
     private Integer batchId;
 
+    @Column(name = "role")
+    @XmlElement
+    private String role;
+
 
     public void setId(Integer id) {
         this.id = id;
@@ -114,6 +118,9 @@ public class Response implements Serializable {
     public void setLinkId(Integer linkId) {
         this.linkId = linkId;
     }
+
+    public String getRole() { return role; }
+    public void setRole(String role) { this.role = role; }
 
 
 

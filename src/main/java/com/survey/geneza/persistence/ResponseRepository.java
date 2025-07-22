@@ -32,7 +32,7 @@ List<Response> findAllByPersonId(Integer personId);
         "WHERE (:batchId IS NULL OR r.batchId = :batchId) " +
         "AND (:personId IS NULL OR r.participant.person.id = :personId) " +
         "AND (:linkId IS NULL OR r.linkId = :linkId) " +
-        "AND (:role IS NULL OR r.participant.role = :role) " +
+        "AND (:role IS NULL OR r.role = :role) " +
         "AND (:surveyId IS NULL OR r.survey.id = :surveyId)")
     List<Response> searchResponses(
         @Param("batchId") Integer batchId,

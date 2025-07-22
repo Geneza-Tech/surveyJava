@@ -69,6 +69,7 @@ com/survey/geneza/domain/AnswerOption.class
 com/survey/geneza/service/UserService.class
 com/survey/geneza/service/impl/GridDisplayServiceImpl.class
 com/survey/geneza/web/rest/GridDisplayRestController.class
+com/survey/geneza/dto/ResponseWithBatchDTO.class
 com/survey/geneza/persistence/AnswerOptionRepository.class
 com/survey/geneza/web/rest/PersonRestController.class
 com/survey/geneza/service/impl/ParticipantServiceImpl.class

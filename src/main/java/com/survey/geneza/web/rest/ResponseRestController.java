@@ -1,5 +1,6 @@
 package com.survey.geneza.web.rest; 
 import com.survey.geneza.domain.Response;
+import com.survey.geneza.dto.ResponseWithBatchDTO;
 import com.survey.geneza.persistence.ResponseRepository;
 import com.survey.geneza.service.ResponseService;
 
@@ -122,8 +123,8 @@ public class ResponseRestController {
 
     @RequestMapping(value = "/Response/personId/{personId}", method = RequestMethod.GET)
     @ResponseBody
-    public ResponseEntity<List<Response>> getResponsesByPersonId(@PathVariable Integer personId) {
-        List<Response> responses = responseService.getResponsesByPersonId(personId);
+    public ResponseEntity<List<ResponseWithBatchDTO>> getResponsesByPersonId(@PathVariable Integer personId) {
+        List<ResponseWithBatchDTO> responses = responseService.getResponsesByPersonId(personId);
         return ResponseEntity.ok(responses);
     }
 
