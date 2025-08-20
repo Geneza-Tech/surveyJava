@@ -47,6 +47,7 @@
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/AnswerOptionTemplateItemServiceImpl.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/domain/Participant.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/AnswerOptionTemplateItemRestController.java
+/home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/dto/ResponseAnswersDTO.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/exception/ServiceException.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/web/rest/InvalidLoginException.java
 /home/ubuntu/survey/surveyJava/src/main/java/com/survey/geneza/service/impl/PersonServiceImpl.java

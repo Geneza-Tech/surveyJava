@@ -29,6 +29,7 @@ com/survey/geneza/security/CustomUserDetailsService$1.class
 com/survey/geneza/service/impl/QuestionTypeServiceImpl.class
 com/survey/geneza/service/impl/UserServiceImpl.class
 com/survey/geneza/service/AnswerOptionService.class
+com/survey/geneza/dto/ResponseAnswersDTO.class
 com/survey/geneza/persistence/UserRepository.class
 com/survey/geneza/security/WebSecurityConfiguration.class
 com/survey/geneza/web/rest/AnswerOptionRestController.class

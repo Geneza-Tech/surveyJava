@@ -4,7 +4,6 @@ import java.lang.StringBuilder;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import javax.persistence.Id;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
@@ -78,6 +77,12 @@ public class AnswerOption implements Serializable {
 
     public AnswerOption() {
     }
+
+    public AnswerOption(Integer id) {
+    this.id = id;
+    }
+
+    
 
 
     public String toString() {

@@ -121,6 +121,10 @@ public class Question implements Serializable {
     public Question() {
     }
 
+    public Question(Integer id) {
+    this.id = id;
+    }
+
 
     public String toString() {
         StringBuilder buffer = new StringBuilder();
@@ -150,5 +154,7 @@ public class Question implements Serializable {
             return false;
         return true;
     }
+
+    
 
 }

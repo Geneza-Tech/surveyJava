@@ -1,5 +1,6 @@
 package com.survey.geneza.web.rest; 
 import com.survey.geneza.domain.ResponseAnswers;
+import com.survey.geneza.dto.ResponseAnswersDTO;
 import com.survey.geneza.persistence.ResponseAnswersRepository;
 import com.survey.geneza.service.ResponseAnswersService;
 import java.util.List;
@@ -18,6 +19,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
+import org.springframework.http.ResponseEntity;
 
 
 @Controller("ResponseAnswersRestController")
@@ -101,5 +103,16 @@ public class ResponseAnswersRestController {
     public List<ResponseAnswers> getAllByResponseId(@PathVariable("response_id") Integer responseId) {
         return new java.util.ArrayList<ResponseAnswers>(responseAnswersService.findAllByResponseId(responseId));
     }
+
+    @RequestMapping(value = "/ResponseAnswers/Response/{response_id}/bulk", method = RequestMethod.POST)
+@ResponseBody
+public ResponseEntity<?> bulkUploadResponseAnswers(
+        @PathVariable("response_id") Integer responseId,
+        @RequestBody List<ResponseAnswersDTO> answers) {
+
+    responseAnswersService.bulkSaveForResponse(responseId, answers);
+    return ResponseEntity.ok("Bulk answers saved successfully");
+}
+
 
 }

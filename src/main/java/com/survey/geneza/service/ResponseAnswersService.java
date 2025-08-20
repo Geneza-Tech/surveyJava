@@ -1,5 +1,7 @@
 package com.survey.geneza.service;
 import com.survey.geneza.domain.ResponseAnswers;
+import com.survey.geneza.dto.ResponseAnswersDTO;
+
 import java.util.List;
 
 public interface ResponseAnswersService {
@@ -10,4 +12,5 @@ public interface ResponseAnswersService {
     public List<ResponseAnswers> findAllByQuestionId(Integer  question);
     public List<ResponseAnswers> findAllByAnswerOptionId(Integer  answerOption);
     public List<ResponseAnswers> findAllByResponseId(Integer  response);
+    void bulkSaveForResponse(Integer responseId, List<ResponseAnswersDTO> answers);
 }
