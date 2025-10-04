@@ -40,42 +40,30 @@ public class ResponseServiceImpl implements ResponseService {
     private JdbcTemplate jdbcTemplate;
 
     @Transactional
-    public void saveResponse(Response response) {
-    //     if (response.getBatchId() == null && response.getParticipant() != null) {
-    //     Integer participantId = response.getParticipant().getId();
+public void saveResponse(Response response) {
 
-    //     // Try Enrollment first
-    //     Integer batchId = responseRepository.findBatchFromEnrollment(participantId);
+    Response existingResponse = responseRepository.findById(response.getId());
+    
+    if (existingResponse != null) {
+        // Update all relevant fields
+        existingResponse.setSurvey(response.getSurvey());
+        existingResponse.setParticipant(response.getParticipant());
+        existingResponse.setLinkType(response.getLinkType());
+        existingResponse.setLinkId(response.getLinkId());
+        existingResponse.setlinkcomment(response.getlinkcomment());
+        existingResponse.setBatchId(response.getBatchId());
+        existingResponse.setRole(response.getRole());
+        existingResponse.setLanguage(response.getLanguage());
 
-    //     // If not found, try BatchMentor
-    //     if (batchId == null) {
-    //         batchId = responseRepository.findBatchFromMentor(participantId);
-    //     }
-
-    //     // If still not found, try BatchTrainer
-    //     if (batchId == null) {
-    //         batchId = responseRepository.findBatchFromTrainer(participantId);
-    //     }
-
-    //     response.setBatchId(batchId); // Can be null if all fail
-    // }
-        Response existingResponse = responseRepository.findById(response.getId());
-        if (existingResponse != null) {
-        if (existingResponse != response) {      
-        existingResponse.setId(response.getId());
-                existingResponse.setSurvey(response.getSurvey());
-                existingResponse.setParticipant(response.getParticipant());
-                existingResponse.setLinkType(response.getLinkType()); // new line
-                existingResponse.setLinkId(response.getLinkId());
-                existingResponse.setlinkcomment(response.getlinkcomment());
-                existingResponse.setBatchId(response.getBatchId());
-        }
-        response = responseRepository.save(existingResponse);
-    }else{
-        response = responseRepository.save(response);
-        }
-        responseRepository.flush();
+        responseRepository.save(existingResponse);
+    } else {
+        // Save new response
+        responseRepository.save(response);
     }
+
+    responseRepository.flush();
+}
+
 
     public boolean deleteResponse(Integer responseId) {
         Response response = responseRepository.findById(responseId);

@@ -38,6 +38,11 @@ public class Survey implements Serializable {
     @Basic(fetch = FetchType.EAGER)
     @XmlElement
     private String surveyType;
+
+    @Column(name = "surveyrole")
+    @Basic(fetch = FetchType.EAGER)
+    @XmlElement
+    private String surveyRole;
     
 
 
@@ -64,6 +69,14 @@ public class Survey implements Serializable {
 
     public void setSurveyType(String surveyType) {
         this.surveyType = surveyType;
+    }
+
+    public String getSurveyRole() {
+        return surveyRole;
+    }
+
+    public void setSurveyRole(String surveyRole) {
+        this.surveyRole = surveyRole;
     }
 
 

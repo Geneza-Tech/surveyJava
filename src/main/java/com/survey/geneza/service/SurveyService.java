@@ -8,4 +8,7 @@ public interface SurveyService {
     public boolean deleteSurvey(Integer surveyId);
     public List<Survey> findAll();
     Survey duplicateSurvey(Integer surveyId, String surveyName);
+    List<Survey> findBySurveyType(String surveyType);
+    List<Survey> findBySurveyrole(String surveyrole);
+    List<Survey> findBySurveyTypeAndSurveyrole(String surveyType, String surveyrole);
 }

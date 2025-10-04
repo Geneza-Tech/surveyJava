@@ -115,4 +115,19 @@ public class SurveyServiceImpl implements SurveyService {
         return copySurvey;
     }
 
+    @Override
+    public List<Survey> findBySurveyType(String surveyType) {
+        return surveyRepository.findBySurveyType(surveyType);
+    }
+
+    @Override
+    public List<Survey> findBySurveyrole(String surveyRole) {
+        return surveyRepository.findBySurveyRole(surveyRole);
+    }
+
+    @Override
+    public List<Survey> findBySurveyTypeAndSurveyrole(String surveyType, String surveyRole) {
+        return surveyRepository.findBySurveyTypeAndSurveyRole(surveyType, surveyRole);
+    }
+
 }

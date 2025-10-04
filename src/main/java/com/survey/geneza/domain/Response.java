@@ -7,6 +7,10 @@ import java.util.Set;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 
 /**
@@ -19,6 +23,7 @@ import javax.persistence.*;
 @Table(name = "Response")
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(namespace = "SurveyRest/com/survey/geneza/domain", name = "Response")
+// @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Response implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -59,6 +64,13 @@ public class Response implements Serializable {
     @Column(name = "role")
     @XmlElement
     private String role;
+
+    @ManyToOne(optional = true, fetch = FetchType.LAZY)
+    @JoinColumn(name = "language", nullable = true)
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+
+    private Language language;
+
 
 
     public void setId(Integer id) {
@@ -121,6 +133,14 @@ public class Response implements Serializable {
 
     public String getRole() { return role; }
     public void setRole(String role) { this.role = role; }
+
+    public Language getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(Language language) {
+        this.language = language;
+    }
 
 
 

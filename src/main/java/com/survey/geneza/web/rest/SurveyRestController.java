@@ -91,5 +91,25 @@ public Survey duplicateSurvey(@PathVariable Integer id, @RequestParam String nam
     return surveyService.duplicateSurvey(id,name);
 }
 
+@RequestMapping(value = "/Survey/Type/{surveyType}", method = RequestMethod.GET)
+@ResponseBody
+public List<Survey> getBySurveyType(@PathVariable String surveyType) {
+    return surveyService.findBySurveyType(surveyType);
+}
+
+// Fetch by surveyrole
+@RequestMapping(value = "/Survey/Role/{surveyrole}", method = RequestMethod.GET)
+@ResponseBody
+public List<Survey> getBySurveyrole(@PathVariable String surveyrole) {
+    return surveyService.findBySurveyrole(surveyrole);
+}
+
+// Fetch by both survey_type and surveyrole
+@RequestMapping(value = "/Survey/Type/{surveyType}/Role/{surveyrole}", method = RequestMethod.GET)
+@ResponseBody
+public List<Survey> getBySurveyTypeAndSurveyrole(@PathVariable String surveyType, @PathVariable String surveyrole) {
+    return surveyService.findBySurveyTypeAndSurveyrole(surveyType, surveyrole);
+}
+
 
 }

@@ -12,5 +12,10 @@ public interface SurveyRepository extends JpaRepository<Survey, Long> {
     Survey findById(Integer id);
     List<Survey> findAll();  
    Page<Survey> findAll(Pageable pageable);
+     List<Survey> findBySurveyType(String surveyType);
+
+    List<Survey> findBySurveyRole(String surveyRole);
+
+    List<Survey> findBySurveyTypeAndSurveyRole(String surveyType, String surveyRole);
 
 }
