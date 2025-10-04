@@ -27,8 +27,8 @@ public class Language implements Serializable {
         @JsonIgnore
     private Person person;
 
-    @Transient
-    private Integer personId;
+    @Column(name = "personId", insertable = false, updatable = false)
+private Integer personId;
 
     // Getters & Setters
     public Integer getId() { return id; }

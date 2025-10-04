@@ -107,4 +107,18 @@ Participant participant = participants.get(0);
         }
         return false;
     }
+
+   @Override
+public List<Language> findByPersonId(Integer personId) {
+    Person person = personRepository.findById(personId);
+if (person == null) {
+    throw new RuntimeException("No person found with id " + personId);
+}
+
+
+    return languageRepository.findByPerson(person);
+}
+
+
+
 }

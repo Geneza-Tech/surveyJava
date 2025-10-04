@@ -6,6 +6,7 @@ import com.survey.geneza.persistence.ParticipantRepository;
 import com.survey.geneza.persistence.ResponseRepository;
 import com.survey.geneza.service.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,5 +49,13 @@ public class LanguageRestController {
     @DeleteMapping("/{id}")
     public boolean deleteLanguage(@PathVariable Integer id) {
         return languageService.delete(id);
+    }
+
+    @GetMapping("/person/{personId}")
+    public ResponseEntity<List<Language>> getLanguagesByPersonId(@PathVariable Integer personId) {
+        List<Language> languages = languageService.findByPersonId(personId);
+        return (languages != null && !languages.isEmpty()) 
+                ? ResponseEntity.ok(languages) 
+                : ResponseEntity.notFound().build();
     }
 }

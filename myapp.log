@@ -3,3 +3,324 @@ Error: Unable to access jarfile com_geneza_lms-3.0.0.jar
 2025-10-04 08:03:54.612  WARN 2144902 --- [HikariPool-28 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-28 - Thread starvation or clock leap detected (housekeeper delta=4m35s62ms558µs318ns).
 2025-10-04 08:03:54.639  INFO 2144902 --- [Thread-227] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown initiated...
 2025-10-04 08:03:54.720  INFO 2144902 --- [Thread-227] com.zaxxer.hikari.HikariDataSource       : HikariPool-28 - Shutdown completed.
+2025-10-04 19:15:47.120  INFO 2231405 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-12-85 with PID 2231405 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-10-04 19:15:47.123  INFO 2231405 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-10-04 19:15:51.365  INFO 2231405 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-04 19:15:51.368  INFO 2231405 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-10-04 19:15:51.387  INFO 2231405 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-10-04 19:15:51.509  INFO 2231405 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-10-04 19:15:51.712 DEBUG 2231405 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Initializing filter 'requestLoggingFilter'
+2025-10-04 19:15:51.713 DEBUG 2231405 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'requestLoggingFilter' configured successfully
+2025-10-04 19:15:51.940  INFO 2231405 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-04 19:15:52.666  INFO 2231405 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-04 19:15:57.405  INFO 2231405 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-04 19:15:57.478  INFO 2231405 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-04 19:15:57.487  INFO 2231405 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-10-04 19:15:57.578 ERROR 2231405 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'languageServiceImpl': Unsatisfied dependency expressed through field 'languageRepository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'languageRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.survey.geneza.persistence.LanguageRepository.findByPersonId(java.lang.Integer)! Unable to locate Attribute  with the the given name [personId] on this ManagedType [com.survey.geneza.domain.Language]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:584) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:90) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1336) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:572) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:548) ~[spring-context-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:142) ~[spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) [spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:386) [spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) [spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1242) [spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1230) [spring-boot-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+	at com.survey.geneza.Application.main(Application.java:25) [classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_462]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_462]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_462]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_462]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.0.8.RELEASE.jar:2.0.8.RELEASE]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'languageRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.survey.geneza.persistence.LanguageRepository.findByPersonId(java.lang.Integer)! Unable to locate Attribute  with the the given name [personId] on this ManagedType [com.survey.geneza.domain.Language]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1694) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:573) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:495) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:317) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:315) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:251) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1135) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1062) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:581) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	... 24 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List com.survey.geneza.persistence.LanguageRepository.findByPersonId(java.lang.Integer)! Unable to locate Attribute  with the the given name [personId] on this ManagedType [com.survey.geneza.domain.Language]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:82) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:103) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:208) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:79) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lookupQuery(RepositoryFactorySupport.java:565) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$mapMethodsToQuery$1(RepositoryFactorySupport.java:558) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193) ~[na:1.8.0_462]
+	at java.util.Iterator.forEachRemaining(Iterator.java:116) ~[na:1.8.0_462]
+	at java.util.Collections$UnmodifiableCollection$1.forEachRemaining(Collections.java:1051) ~[na:1.8.0_462]
+	at java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1801) ~[na:1.8.0_462]
+	at java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:482) ~[na:1.8.0_462]
+	at java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:472) ~[na:1.8.0_462]
+	at java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708) ~[na:1.8.0_462]
+	at java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234) ~[na:1.8.0_462]
+	at java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:566) ~[na:1.8.0_462]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.mapMethodsToQuery(RepositoryFactorySupport.java:560) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.lambda$new$0(RepositoryFactorySupport.java:550) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at java.util.Optional.map(Optional.java:215) ~[na:1.8.0_462]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:550) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:323) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$4(RepositoryFactoryBeanSupport.java:290) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:141) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.util.Lazy.get(Lazy.java:63) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:293) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:102) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1753) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1690) ~[spring-beans-5.0.12.RELEASE.jar:5.0.12.RELEASE]
+	... 34 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Unable to locate Attribute  with the the given name [personId] on this ManagedType [com.survey.geneza.domain.Language]
+	at org.hibernate.metamodel.internal.AbstractManagedType.checkNotNull(AbstractManagedType.java:128) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.hibernate.metamodel.internal.AbstractManagedType.getAttribute(AbstractManagedType.java:113) ~[hibernate-core-5.2.17.Final.jar:5.2.17.Final]
+	at org.springframework.data.jpa.repository.query.QueryUtils.toExpressionRecursively(QueryUtils.java:593) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.QueryUtils.toExpressionRecursively(QueryUtils.java:577) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryCreator$PredicateBuilder.getTypedPath(JpaQueryCreator.java:379) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryCreator$PredicateBuilder.build(JpaQueryCreator.java:302) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryCreator.toPredicate(JpaQueryCreator.java:207) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryCreator.create(JpaQueryCreator.java:120) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryCreator.create(JpaQueryCreator.java:57) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.query.parser.AbstractQueryCreator.createCriteria(AbstractQueryCreator.java:119) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.query.parser.AbstractQueryCreator.createQuery(AbstractQueryCreator.java:95) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.repository.query.parser.AbstractQueryCreator.createQuery(AbstractQueryCreator.java:81) ~[spring-data-commons-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$QueryPreparer.<init>(PartTreeJpaQuery.java:145) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$CountQueryPreparer.<init>(PartTreeJpaQuery.java:268) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:77) ~[spring-data-jpa-2.0.13.RELEASE.jar:2.0.13.RELEASE]
+	... 60 common frames omitted
+
+2025-10-04 19:23:04.437  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-12-85 with PID 2233399 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-10-04 19:23:04.440  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-10-04 19:23:09.877  INFO 2233399 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-04 19:23:09.878  INFO 2233399 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-10-04 19:23:09.897  INFO 2233399 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-10-04 19:23:10.062  INFO 2233399 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-10-04 19:23:10.357 DEBUG 2233399 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Initializing filter 'requestLoggingFilter'
+2025-10-04 19:23:10.358 DEBUG 2233399 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'requestLoggingFilter' configured successfully
+2025-10-04 19:23:10.648  INFO 2233399 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-04 19:23:11.142  INFO 2233399 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-04 19:23:17.008  INFO 2233399 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2025-10-04 19:23:19.422  INFO 2233399 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2025-10-04 19:23:19.461  INFO 2233399 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-10-04 19:23:19.611  INFO 2233399 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-10-04 19:23:19.958  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_1
+2025-10-04 19:23:19.989  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_2
+2025-10-04 19:23:20.019  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_1
+2025-10-04 19:23:20.028  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_2
+2025-10-04 19:23:20.094  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_1
+2025-10-04 19:23:20.098  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_3
+2025-10-04 19:23:20.162  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_2
+2025-10-04 19:23:20.166  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_4
+2025-10-04 19:23:20.186  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_3
+2025-10-04 19:23:20.190  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_5
+2025-10-04 19:23:20.223  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_4
+2025-10-04 19:23:20.231  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_6
+2025-10-04 19:23:20.268  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_5
+2025-10-04 19:23:20.273  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_7
+2025-10-04 19:23:20.282  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByQuestionIdUsingGET_1
+2025-10-04 19:23:20.326  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_6
+2025-10-04 19:23:20.337  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_8
+2025-10-04 19:23:20.356  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllBySurveyIdUsingGET_1
+2025-10-04 19:23:20.407  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_7
+2025-10-04 19:23:20.413  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_9
+2025-10-04 19:23:20.562  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : Started Application in 16.966 seconds (JVM running for 17.663)
+2025-10-04 19:23:35.791  INFO 2233399 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-10-04 19:23:35.869 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-ui.html;client=127.0.0.1]
+2025-10-04 19:23:35.924 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-ui.html;client=127.0.0.1]
+2025-10-04 19:23:35.998 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/springfox.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.002 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.018 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/springfox.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.027 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.056 DEBUG 2233399 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-bundle.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.079 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.081 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/springfox.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.107 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/springfox.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.120 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.122 DEBUG 2233399 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-bundle.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.626 DEBUG 2233399 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/favicon-32x32.png?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.630 DEBUG 2233399 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources/configuration/ui;client=127.0.0.1]
+2025-10-04 19:23:36.646 DEBUG 2233399 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/favicon-32x32.png?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:23:36.723 DEBUG 2233399 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources/configuration/ui;client=127.0.0.1]
+2025-10-04 19:23:36.865 DEBUG 2233399 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources/configuration/security;client=127.0.0.1]
+2025-10-04 19:23:36.877 DEBUG 2233399 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources/configuration/security;client=127.0.0.1]
+2025-10-04 19:23:36.922 DEBUG 2233399 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources;client=127.0.0.1]
+2025-10-04 19:23:36.927 DEBUG 2233399 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources;client=127.0.0.1]
+2025-10-04 19:23:36.997 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/v2/api-docs;client=127.0.0.1]
+2025-10-04 19:23:36.997 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/;client=127.0.0.1]
+2025-10-04 19:23:37.004 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/;client=127.0.0.1]
+2025-10-04 19:23:37.009 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.010 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.024 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.027 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.082 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/csrf;client=127.0.0.1]
+2025-10-04 19:23:37.091 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/csrf;client=127.0.0.1]
+2025-10-04 19:23:37.217 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/v2/api-docs;client=127.0.0.1]
+2025-10-04 19:23:37.408 DEBUG 2233399 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.411 DEBUG 2233399 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.421 DEBUG 2233399 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:23:37.422 DEBUG 2233399 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2;client=127.0.0.1]
+2025-10-04 19:23:43.315 DEBUG 2233399 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:23:43.322 DEBUG 2233399 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:23:45.931 DEBUG 2233399 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:23:45.937 DEBUG 2233399 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:23:49.477 DEBUG 2233399 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Language;client=127.0.0.1]
+2025-10-04 19:23:49.573 DEBUG 2233399 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Language;client=127.0.0.1]
+2025-10-04 19:23:49.675 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:23:49.686 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:24:14.861 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Language/3;client=127.0.0.1]
+2025-10-04 19:24:14.874 DEBUG 2233399 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Language/3;client=127.0.0.1]
+2025-10-04 19:24:32.378 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Response;client=127.0.0.1]
+2025-10-04 19:24:32.851 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Response;client=127.0.0.1]
+2025-10-04 19:25:36.898 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Response/Participant/8;client=127.0.0.1]
+2025-10-04 19:25:36.932 DEBUG 2233399 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Response/Participant/8;client=127.0.0.1]
+2025-10-04 19:25:58.222 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Language/person/476;client=127.0.0.1]
+2025-10-04 19:25:58.238 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Language/person/476;client=127.0.0.1]
+2025-10-04 19:30:34.718  INFO 2233399 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-04 19:30:34.750  INFO 2233399 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-10-04 19:30:35.211  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-12-85 with PID 2233399 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-10-04 19:30:35.212  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-10-04 19:30:36.238  INFO 2233399 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-04 19:30:36.239  INFO 2233399 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-10-04 19:30:36.263  INFO 2233399 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-10-04 19:30:36.314 DEBUG 2233399 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Initializing filter 'requestLoggingFilter'
+2025-10-04 19:30:36.317 DEBUG 2233399 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'requestLoggingFilter' configured successfully
+2025-10-04 19:30:36.432  INFO 2233399 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-10-04 19:30:36.507  INFO 2233399 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-10-04 19:30:38.677  INFO 2233399 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2025-10-04 19:30:39.249  INFO 2233399 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2025-10-04 19:30:39.256  INFO 2233399 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-10-04 19:30:39.280  INFO 2233399 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-10-04 19:30:39.367  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_1
+2025-10-04 19:30:39.393  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_2
+2025-10-04 19:30:39.409  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_1
+2025-10-04 19:30:39.415  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_2
+2025-10-04 19:30:39.465  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_1
+2025-10-04 19:30:39.468  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_3
+2025-10-04 19:30:39.496  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_2
+2025-10-04 19:30:39.498  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_4
+2025-10-04 19:30:39.511  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_3
+2025-10-04 19:30:39.514  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_5
+2025-10-04 19:30:39.538  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_4
+2025-10-04 19:30:39.542  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_6
+2025-10-04 19:30:39.576  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_5
+2025-10-04 19:30:39.583  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_7
+2025-10-04 19:30:39.591  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByQuestionIdUsingGET_1
+2025-10-04 19:30:39.622  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_6
+2025-10-04 19:30:39.626  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_8
+2025-10-04 19:30:39.633  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllBySurveyIdUsingGET_1
+2025-10-04 19:30:39.671  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_7
+2025-10-04 19:30:39.673  INFO 2233399 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_9
+2025-10-04 19:30:39.703  INFO 2233399 --- [restartedMain] com.survey.geneza.Application            : Started Application in 4.537 seconds (JVM running for 456.805)
+2025-10-04 19:30:48.369  INFO 2233399 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-10-04 19:30:48.378 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Language/person/476;client=127.0.0.1]
+2025-10-04 19:30:48.426 DEBUG 2233399 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Language/person/476;client=127.0.0.1]
+2025-10-04 19:30:59.819 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Response/Participant/8;client=127.0.0.1]
+2025-10-04 19:30:59.858 DEBUG 2233399 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Response/Participant/8;client=127.0.0.1]
+2025-10-04 19:31:17.346 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Response;client=127.0.0.1]
+2025-10-04 19:31:17.464 DEBUG 2233399 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Response;client=127.0.0.1]
+2025-10-04 19:31:31.183  INFO 2233399 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-10-04 19:31:31.222  INFO 2233399 --- [Thread-19] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-10-04 19:32:56.858  INFO 2236440 --- [restartedMain] com.survey.geneza.Application            : Starting Application on ip-172-31-12-85 with PID 2236440 (/home/ubuntu/survey/surveyJava/target/classes started by ubuntu in /home/ubuntu/survey/surveyJava)
+2025-10-04 19:32:56.862  INFO 2236440 --- [restartedMain] com.survey.geneza.Application            : No active profile set, falling back to default profiles: default
+2025-10-04 19:33:01.867  INFO 2236440 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-04 19:33:01.869  INFO 2236440 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.37
+2025-10-04 19:33:01.883  INFO 2236440 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib]
+2025-10-04 19:33:02.042  INFO 2236440 --- [localhost-startStop-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring embedded WebApplicationContext
+2025-10-04 19:33:02.257 DEBUG 2236440 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Initializing filter 'requestLoggingFilter'
+2025-10-04 19:33:02.257 DEBUG 2236440 --- [localhost-startStop-1] o.s.w.f.CommonsRequestLoggingFilter      : Filter 'requestLoggingFilter' configured successfully
+2025-10-04 19:33:02.502  INFO 2236440 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-10-04 19:33:03.296  INFO 2236440 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-10-04 19:33:09.005  INFO 2236440 --- [restartedMain] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2025-10-04 19:33:11.193  INFO 2236440 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2025-10-04 19:33:11.229  INFO 2236440 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2025-10-04 19:33:11.381  INFO 2236440 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2025-10-04 19:33:11.699  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_1
+2025-10-04 19:33:11.751  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_2
+2025-10-04 19:33:11.779  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_1
+2025-10-04 19:33:11.786  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByMenuListIdUsingGET_2
+2025-10-04 19:33:11.882  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_1
+2025-10-04 19:33:11.888  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_3
+2025-10-04 19:33:11.937  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_2
+2025-10-04 19:33:11.941  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_4
+2025-10-04 19:33:11.967  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_3
+2025-10-04 19:33:11.972  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_5
+2025-10-04 19:33:12.015  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_4
+2025-10-04 19:33:12.019  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_6
+2025-10-04 19:33:12.063  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_5
+2025-10-04 19:33:12.068  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_7
+2025-10-04 19:33:12.081  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllByQuestionIdUsingGET_1
+2025-10-04 19:33:12.138  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_6
+2025-10-04 19:33:12.142  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_8
+2025-10-04 19:33:12.155  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getAllBySurveyIdUsingGET_1
+2025-10-04 19:33:12.196  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedUsingGET_7
+2025-10-04 19:33:12.199  INFO 2236440 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findAllPagedSortedUsingGET_9
+2025-10-04 19:33:12.338  INFO 2236440 --- [restartedMain] com.survey.geneza.Application            : Started Application in 16.345 seconds (JVM running for 17.222)
+2025-10-04 19:33:15.902  INFO 2236440 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[localhost].[/survey]        : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2025-10-04 19:33:15.964 DEBUG 2236440 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-ui.html;client=127.0.0.1]
+2025-10-04 19:33:16.014 DEBUG 2236440 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-ui.html;client=127.0.0.1]
+2025-10-04 19:33:16.115 DEBUG 2236440 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/springfox.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.135 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.152 DEBUG 2236440 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/springfox.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.169 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui.css?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.189 DEBUG 2236440 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-bundle.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.196 DEBUG 2236440 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.209 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/springfox.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.247 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/springfox.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.263 DEBUG 2236440 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-standalone-preset.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.285 DEBUG 2236440 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/swagger-ui-bundle.js?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.760 DEBUG 2236440 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources/configuration/ui;client=127.0.0.1]
+2025-10-04 19:33:16.772 DEBUG 2236440 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/favicon-32x32.png?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.785 DEBUG 2236440 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/favicon-32x32.png?v=2.9.2;client=127.0.0.1]
+2025-10-04 19:33:16.850 DEBUG 2236440 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources/configuration/ui;client=127.0.0.1]
+2025-10-04 19:33:16.946 DEBUG 2236440 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources/configuration/security;client=127.0.0.1]
+2025-10-04 19:33:16.957 DEBUG 2236440 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources/configuration/security;client=127.0.0.1]
+2025-10-04 19:33:17.003 DEBUG 2236440 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/swagger-resources;client=127.0.0.1]
+2025-10-04 19:33:17.012 DEBUG 2236440 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/swagger-resources;client=127.0.0.1]
+2025-10-04 19:33:17.101 DEBUG 2236440 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/v2/api-docs;client=127.0.0.1]
+2025-10-04 19:33:17.106 DEBUG 2236440 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/;client=127.0.0.1]
+2025-10-04 19:33:17.115 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.118 DEBUG 2236440 --- [http-nio-8081-exec-2] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/;client=127.0.0.1]
+2025-10-04 19:33:17.121 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.136 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.144 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.208 DEBUG 2236440 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/csrf;client=127.0.0.1]
+2025-10-04 19:33:17.220 DEBUG 2236440 --- [http-nio-8081-exec-6] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/csrf;client=127.0.0.1]
+2025-10-04 19:33:17.398 DEBUG 2236440 --- [http-nio-8081-exec-1] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/v2/api-docs;client=127.0.0.1]
+2025-10-04 19:33:17.530 DEBUG 2236440 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.532 DEBUG 2236440 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.538 DEBUG 2236440 --- [http-nio-8081-exec-9] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-300.woff2;client=127.0.0.1]
+2025-10-04 19:33:17.539 DEBUG 2236440 --- [http-nio-8081-exec-5] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/open-sans-v15-latin-700.woff2;client=127.0.0.1]
+2025-10-04 19:33:20.946 DEBUG 2236440 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:33:20.952 DEBUG 2236440 --- [http-nio-8081-exec-8] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/source-code-pro-v7-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:33:21.069 DEBUG 2236440 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:33:21.075 DEBUG 2236440 --- [http-nio-8081-exec-10] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-regular.woff2;client=127.0.0.1]
+2025-10-04 19:33:28.073 DEBUG 2236440 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Language/;client=127.0.0.1]
+2025-10-04 19:33:28.236 DEBUG 2236440 --- [http-nio-8081-exec-4] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Language/;client=127.0.0.1;payload={
+  "block": "toast",
+  "district": "toast",
+  "languageName": "tost",
+  "personId": 476,
+  "state": "toast",
+  "village": "toast"
+}]
+2025-10-04 19:33:28.328 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:33:28.332 DEBUG 2236440 --- [http-nio-8081-exec-7] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/webjars/springfox-swagger-ui/fonts/titillium-web-v6-latin-600.woff2;client=127.0.0.1]
+2025-10-04 19:33:50.089 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : Before request [uri=/survey/Response/personId/476;client=127.0.0.1]
+2025-10-04 19:33:50.204 DEBUG 2236440 --- [http-nio-8081-exec-3] o.s.w.f.CommonsRequestLoggingFilter      : After request [uri=/survey/Response/personId/476;client=127.0.0.1]
+2025-10-04 19:34:21.680  INFO 2236440 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-10-04 19:34:21.714  INFO 2236440 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

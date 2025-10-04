@@ -9,4 +9,5 @@ public interface LanguageService {
     List<Language> findAll();
     Language findById(Integer id);
     boolean delete(Integer id);
+    List<Language> findByPersonId(Integer personId);
 }
