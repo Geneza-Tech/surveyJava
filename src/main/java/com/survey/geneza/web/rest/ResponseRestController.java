@@ -169,4 +169,16 @@ public List<Response> getByParticipantLinkAndBatch(
     return responseService.findByParticipantAndLinkIdAndBatchId(participant, linkId, batchId);
 }
 
+@RequestMapping(value = "/Response/Language/{language_id}", method = RequestMethod.GET)
+@ResponseBody
+public List<Response> getAllByLanguageId(@PathVariable("language_id") Integer languageId) {
+    return responseService.findAllByLanguageId(languageId);
+}
+
+@RequestMapping(value = "/Response/Language/temp/{tempId}", method = RequestMethod.GET)
+@ResponseBody
+public List<Response> getAllByLanguageTempId(@PathVariable("tempId") Long tempId) {
+    return responseService.findAllByLanguageTempId(tempId);
+}
+
 }

@@ -20,5 +20,8 @@ public interface ResponseService {
     List<Response> searchResponses(Integer batchId, Integer personId, Integer linkId,String role, Integer surveyId);
     List<Object[]> getAllBatchIdsLinkedToPerson(Integer personId);
         List<Response> findByParticipantAndLinkIdAndBatchId(Integer participant, Integer linkId, Integer batchId);
+        List<Response> findAllByLanguageId(Integer languageId);
+    List<Response> findAllByLanguageTempId(Long tempId);
+
 
 }

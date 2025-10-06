@@ -81,5 +81,9 @@ List<Object[]> findAllBatchIdsLinkedToPerson(@Param("personId") Integer personId
 
 List<Response> findByParticipantAndLinkIdAndBatchId(Integer participant, Integer linkId, Integer batchId);
 
+List<Response> findAllByLanguage_Id(Integer languageId);
+
+List<Response> findAllByLanguage_TempId(Long tempId);
+
 
 }

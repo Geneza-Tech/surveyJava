@@ -10,4 +10,5 @@ public interface LanguageService {
     Language findById(Integer id);
     boolean delete(Integer id);
     List<Language> findByPersonId(Integer personId);
+    
 }

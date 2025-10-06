@@ -6,11 +6,11 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 
 @Entity
 @Table(name = "Language")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-
 public class Language implements Serializable {
 
     @Id
@@ -22,13 +22,18 @@ public class Language implements Serializable {
     private String block;
     private String village;
     private String languageName;
- @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "personId", nullable = false)  // FK column in the table
-        @JsonIgnore
+    @JsonIgnore
     private Person person;
 
     @Column(name = "personId", insertable = false, updatable = false)
-private Integer personId;
+    private Integer personId;
+
+    @Column(name = "tempId")
+    private Long tempId;
+
 
     // Getters & Setters
     public Integer getId() { return id; }
@@ -52,6 +57,9 @@ private Integer personId;
     public Person getPerson() { return person; }
     public void setPerson(Person person) { this.person = person; }
 
-     public Integer getPersonId() { return personId; }
+    public Integer getPersonId() { return personId; }
     public void setPersonId(Integer personId) { this.personId = personId; }
+
+    public Long  getTempId() { return tempId; }
+    public void setTempId(Long  tempId) { this.tempId = tempId; }
 }

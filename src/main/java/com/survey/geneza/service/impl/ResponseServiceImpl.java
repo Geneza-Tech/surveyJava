@@ -154,4 +154,19 @@ public List<Object[]> getAllBatchIdsLinkedToPerson(Integer personId) {
     public List<Response> findByParticipantAndLinkIdAndBatchId(Integer participant, Integer linkId, Integer batchId) {
         return responseRepository.findByParticipantAndLinkIdAndBatchId(participant, linkId, batchId);
     }
+
+
+@Override
+@Transactional
+public List<Response> findAllByLanguageId(Integer languageId) {
+    return responseRepository.findAllByLanguage_Id(languageId);
+}
+
+
+@Override
+@Transactional
+public List<Response> findAllByLanguageTempId(Long tempId) {
+    return responseRepository.findAllByLanguage_TempId(tempId);
+}
+
 }

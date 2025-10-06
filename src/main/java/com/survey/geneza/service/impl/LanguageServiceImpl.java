@@ -43,12 +43,23 @@ public class LanguageServiceImpl implements LanguageService {
 public Language save(Language language) {
     // Ensure person is loaded
     Person person = personRepository.findById(language.getPersonId());
-if (person == null) {
-    throw new RuntimeException("No person found with id " + language.getPersonId());
-}
- List<Participant> participants = participantRepository.findAllByPersonId(person.getId());
+    if (person == null) {
+        throw new RuntimeException("No person found with id " + language.getPersonId());
+    }
+
+    // Fetch participant(s) by personId
+    List<Participant> participants = participantRepository.findAllByPersonId(person.getId());
+
+    Participant participant;
     if (participants == null || participants.isEmpty()) {
-        throw new RuntimeException("No participant found for person id " + person.getId());
+        // No participant found → create one
+        participant = new Participant();
+        participant.setPerson(person);
+        participant.setRole("DEFAULT_ROLE"); // 🔹 set a sensible default role or pass from request
+        participant = participantRepository.save(participant);
+    } else {
+        // Use the first participant (or add logic if multiple)
+        participant = participants.get(0);
     }
 
     // Set the person reference in language
@@ -63,30 +74,18 @@ if (person == null) {
         throw new RuntimeException("No surveys found of type 'Language'");
     }
 
-    // Fetch participant associated with the person
-    // List<Participant> participants = participantRepository.findAllByPersonId(person.getId());
-
-if (participants == null || participants.isEmpty()) {
-    throw new RuntimeException("No participant found for person id " + person.getId());
-}
-
-// Take the first participant (or handle differently if multiple)
-Participant participant = participants.get(0);
-
-
     // Create a response for each survey
     for (Survey survey : surveys) {
         Response response = new Response();
         response.setLanguage(savedLanguage); // Link response to the saved language
-        response.setParticipant(participant); // Assign participant fetched via person id
-        response.setSurvey(survey);           // Assign survey
-        response.setLinkType("Language");     // Optional link type
+        response.setParticipant(participant); // Assign the created or existing participant
+        response.setSurvey(survey);           
+        response.setLinkType("Language");     
         responseRepository.save(response);
     }
 
     return savedLanguage;
-    }
-
+}
 
 
     @Override
@@ -118,6 +117,8 @@ if (person == null) {
 
     return languageRepository.findByPerson(person);
 }
+
+
 
 
 
