@@ -1,46 +1,73 @@
 package com.survey.geneza.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class ResponseAnswersDTO {
-    private Integer id;
-    private String answerText;
+
+    @NotNull(message = "Question ID is required")
     private Integer questionId;
-    private Integer answerOptionId;
+
+    @NotNull(message = "Response ID is required")
     private Integer responseId;
 
-    public ResponseAnswersDTO() {}
+    // For single answer questions
+    private Integer answerOptionId;
 
-    public Integer getId() {
-        return id;
-    }
-    public void setId(Integer id) {
-        this.id = id;
+    // For multiple answer questions - comma-separated IDs
+    private String multipleAnswerOptions;
+
+    // For text/open-ended questions
+    private String answerText;
+
+    public ResponseAnswersDTO() {
     }
 
-    public String getAnswerText() {
-        return answerText;
-    }
-    public void setAnswerText(String answerText) {
+    public ResponseAnswersDTO(Integer questionId, Integer responseId, Integer answerOptionId, 
+                              String multipleAnswerOptions, String answerText) {
+        this.questionId = questionId;
+        this.responseId = responseId;
+        this.answerOptionId = answerOptionId;
+        this.multipleAnswerOptions = multipleAnswerOptions;
         this.answerText = answerText;
     }
 
     public Integer getQuestionId() {
         return questionId;
     }
+
     public void setQuestionId(Integer questionId) {
         this.questionId = questionId;
-    }
-
-    public Integer getAnswerOptionId() {
-        return answerOptionId;
-    }
-    public void setAnswerOptionId(Integer answerOptionId) {
-        this.answerOptionId = answerOptionId;
     }
 
     public Integer getResponseId() {
         return responseId;
     }
+
     public void setResponseId(Integer responseId) {
         this.responseId = responseId;
+    }
+
+    public Integer getAnswerOptionId() {
+        return answerOptionId;
+    }
+
+    public void setAnswerOptionId(Integer answerOptionId) {
+        this.answerOptionId = answerOptionId;
+    }
+
+    public String getMultipleAnswerOptions() {
+        return multipleAnswerOptions;
+    }
+
+    public void setMultipleAnswerOptions(String multipleAnswerOptions) {
+        this.multipleAnswerOptions = multipleAnswerOptions;
+    }
+
+    public String getAnswerText() {
+        return answerText;
+    }
+
+    public void setAnswerText(String answerText) {
+        this.answerText = answerText;
     }
 }

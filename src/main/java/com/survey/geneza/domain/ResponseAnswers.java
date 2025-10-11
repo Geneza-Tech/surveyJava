@@ -4,7 +4,6 @@ import java.lang.StringBuilder;
 import java.util.Calendar;
 import java.util.LinkedHashSet;
 import java.util.Set;
-import javax.persistence.Id;
 import java.util.Date;
 import java.math.*;
 import javax.xml.bind.annotation.*;
@@ -34,6 +33,8 @@ public class ResponseAnswers implements Serializable {
     @Basic(fetch = FetchType.EAGER)
     @XmlElement
     private String answerText;
+    @Column(name = "multipleAnswerOptions")
+    private String multipleAnswerOptions;
     @ManyToOne
     @JoinColumn(name="question")
     private Question question;@ManyToOne
@@ -83,6 +84,9 @@ public class ResponseAnswers implements Serializable {
     public void setAnswerText(String answerText) {
         this.answerText = answerText;
     }
+
+    public String getMultipleAnswerOptions() { return multipleAnswerOptions; }
+    public void setMultipleAnswerOptions(String multipleAnswerOptions) { this.multipleAnswerOptions = multipleAnswerOptions; }
 
 
     public ResponseAnswers() {
